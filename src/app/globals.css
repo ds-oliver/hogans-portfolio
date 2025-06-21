@@ -1,26 +1,202 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@font-face {
+  font-family: 'F1 Black';
+  src: url('/fonts/F1Black.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Ensure F1 font is available globally */
+.font-f1 {
+  font-family: 'F1 Black', 'Arial Black', sans-serif;
+  font-weight: 900;
+}
+
+/* Fallback for gradient text if needed */
+.text-gradient-fallback {
+  color: #C91A7B;
+}
+
+:root {
+  --background: #1a1a1c; /* Dark charcoal with blue undertone - main page background */
+  --background-secondary: #242428; /* Slightly lighter charcoal with blue undertone */
+  --foreground: #e8eaed; /* Light grey - primary text (not pure white) */
+  --foreground-secondary: #c4c7ca; /* Medium grey - secondary text */
+  --foreground-muted: #a8abae; /* More sedated off-white for body text */
+  --skill-text: #f5f5f5; /* Near-white for skill labels on gradient backgrounds */
+  --primary-accent: #2a9d8f; /* persian_green */
+  --secondary-accent: #e9c46a; /* saffron */
+  --tertiary-accent: #f4a261; /* sandy_brown */
+  
+  /* Sophisticated accent colors for strategic color bursts */
+  --accent-teal: #008B8B; /* Dark Cyan - modern, tech-forward */
+  --accent-teal-hover: #20B2AA; /* Light Sea Green - hover state */
+  --accent-gold: #B8860B; /* Dark Goldenrod - luxury, sophistication */
+  --accent-gold-hover: #DAA520; /* Goldenrod - hover state */
+  --accent-rose: #BC8F8F; /* Rosy Brown - warm, elegant */
+  --accent-rose-hover: #D2B0B0; /* Lighter rosy brown - hover state */
+  --accent-purple: #6A5ACD; /* Slate Blue - creative, distinctive */
+  --accent-purple-hover: #7B68EE; /* Medium Slate Blue - hover state */
+  
+  /* Enhanced ripple effect gradients using new earthy palette */
+  --accent: 42, 157, 143; /* persian_green RGB */
+  /* Define your specific gradient for work skills with the new colors */
+  --work-gradient: linear-gradient(45deg, #62db5d, #4ecf47 30%, #3bc93b 60%, #62db5d 90%);
+
+  /* Define your specific gradient for learning skills with the new colors */
+  --learning-gradient: linear-gradient(45deg, #f4a261, #f7b267 25%, #f4a261 50%, #e76f51 75%, #f4a261 100%);
+  
+  /* Sophisticated monochromatic background gradient with blue undertone */
+  --background-gradient: linear-gradient(135deg, #1a1a1c 0%, #242428 50%, #1e1e22 100%);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #1a1a1c; /* Dark charcoal with blue undertone */
+    --foreground: #e8eaed; /* Light grey instead of pure white */
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Use data-theme for initial dark mode to prevent FOUC */
+[data-theme="dark"] {
+  --background: #1a1a1c; /* Dark charcoal with blue undertone */
+  --foreground: #e8eaed; /* Light grey instead of pure white */
 }
+
+/* Font Assignments */
+html {
+  font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background-gradient);
+  background-attachment: fixed; /* Keeps gradient fixed during scroll */
+  font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  min-height: 100vh; /* Ensures gradient covers full viewport */
+}
+
+/* Poppins ONLY for headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-poppins), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Inter for all other elements */
+a {
+  font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.nav-links a {
+  font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.intro {
+  font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+div, span, p {
+  font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Monospace for code */
+code {
+  font-family: Menlo, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace;
+}
+
+/* Custom gradient classes using the watermelon color palette */
+.gradient-fuschia-watermelon {
+  background: linear-gradient(to right, var(--primary-accent), var(--secondary-accent));
+}
+
+.text-gradient-fuschia-watermelon {
+  background: linear-gradient(to right, var(--primary-accent), var(--secondary-accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Gradient border hover effects */
+.gradient-border-hover {
+  position: relative;
+  background: var(--background-secondary);
+  border: 2px solid var(--foreground-secondary);
+  background-clip: padding-box;
+  transition: all 0.3s ease;
+}
+
+.gradient-border-hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  margin: -2px;
+  border-radius: inherit;
+  background: linear-gradient(45deg, var(--accent-teal), var(--accent-gold), var(--accent-teal));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gradient-border-hover:hover {
+  border-color: transparent;
+  /* Remove the gradient background - we only want gradient border */
+}
+
+.gradient-border-hover:hover::before {
+  opacity: 1;
+}
+
+/* Button variant classes that work with gradient hover system */
+.button-primary {
+  background-color: var(--background-secondary); /* Neutral background */
+  color: var(--foreground);
+  border: 2px solid var(--foreground-secondary); /* Start with near-white border */
+}
+
+.button-secondary {
+  background-color: var(--background-secondary); /* Neutral background */
+  color: var(--foreground);
+  border: 2px solid var(--foreground-secondary); /* Start with near-white border */
+}
+
+.button-outline {
+  background-color: transparent;
+  color: var(--foreground);
+  border: 2px solid var(--foreground-secondary); /* Near-white border */
+}
+
+.button-ghost {
+  background-color: rgba(36, 36, 40, 0.3); /* Very subtle background */
+  color: var(--foreground);
+  border: 2px solid transparent;
+}
+
+/* Navigation button gradient border using the cleaner technique */
+.nav-gradient-border {
+  background-image: linear-gradient(var(--background-secondary), var(--background-secondary)), 
+                    linear-gradient(45deg, 
+                      rgba(200, 199, 202, 0.4), 
+                      rgba(42, 157, 143, 0.3), 
+                      rgba(233, 196, 106, 0.3), 
+                      rgba(200, 199, 202, 0.4));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.nav-gradient-border:hover {
+  background-image: none;
+  border: 2px solid var(--foreground-secondary);
+  background-color: var(--background-secondary);
+}
+
+.button-card {
+  background-color: var(--background-secondary); /* Neutral background */
+  color: var(--foreground);
+  border: 2px solid var(--foreground-secondary); /* Near-white border */
+} 

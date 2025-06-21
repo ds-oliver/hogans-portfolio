@@ -1,3 +1,7 @@
+# Portfolio Backup - 2025-05-31 18:00
+
+This is a backup copy of the portfolio created on May 31, 2025 at 18:00.
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started

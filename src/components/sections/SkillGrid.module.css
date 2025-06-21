@@ -1,0 +1,13 @@
+/* Skill row layout - now using horizontal flex with fixed-width labels */
+.skillRow {
+  /* Layout is now handled by Tailwind classes: flex items-center */
+}
+
+.skillLabel {
+  /* Width and spacing now handled by Tailwind classes: w-24 mr-3 */
+  text-align: left;
+}
+
+.skillBars {
+  /* Flex display now handled by Tailwind class: flex */
+} 

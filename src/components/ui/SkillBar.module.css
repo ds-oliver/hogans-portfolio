@@ -1,0 +1,48 @@
+/* Enhanced skill bar ripple effect */
+.skillSquare {
+  background-image: none;
+  background-size: 600%; /* Controls the size of the gradient area */
+  background-position: 120%; /* Initial position - hides the gradient */
+  transition: background-position 2s cubic-bezier(0.22, 1, 0.36, 1); /* Smooth animation for background-position changes */
+  cursor: pointer;
+  /* Make sure other base styles like h-9, w-9, rounded-sm, etc. are also applied */
+  overflow: hidden; /* Important: clips the large background-size to the element */
+}
+
+.active {
+  /* Marker class for active skill squares */
+}
+
+.work {
+  /* Marker class for work skills */
+}
+
+.learning {
+  /* Marker class for learning skills */
+}
+
+/* Hover ripple effect */
+.skillSquare.work:is(:hover, :focus-within) {
+  background-position: -20%; /* Target position - reveals and animates the gradient */
+  background-image: var(--work-gradient); /* Apply the specific gradient */
+  transition: background-position 1.4s cubic-bezier(0.22, 1, 0.36, 1); /* Faster transition on hover/focus */
+}
+
+.skillSquare.learning:is(:hover, :focus-within) {
+  background-position: -20%;
+  background-image: var(--learning-gradient);
+  transition: background-position 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* View-triggered ripple effect - even slower and more pronounced */
+.skillSquare.rippleOnView.work {
+  background-position: -20%;
+  background-image: var(--work-gradient);
+  transition: background-position 2.2s cubic-bezier(0.22, 1, 0.36, 1); /* Very slow for initial view */
+}
+
+.skillSquare.rippleOnView.learning {
+  background-position: -20%;
+  background-image: var(--learning-gradient);
+  transition: background-position 2.2s cubic-bezier(0.22, 1, 0.36, 1);
+} 
