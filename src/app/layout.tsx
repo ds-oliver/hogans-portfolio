@@ -19,8 +19,64 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Hogan | Data Engineering & ML Engineer",
-  description: "Portfolio website showcasing my work as a Data Engineering and Machine Learning Engineer",
-  keywords: ["Data Engineering", "Machine Learning", "ML Engineer", "Data Science", "Portfolio"],
+  description: "Portfolio website showcasing my work as a Data Engineering and Machine Learning Engineer, specializing in data pipelines, ML models, and analytics solutions.",
+  keywords: [
+    "Data Engineering",
+    "Machine Learning",
+    "ML Engineer",
+    "Data Science",
+    "Portfolio",
+    "Data Pipeline",
+    "Analytics",
+    "Python",
+    "SQL",
+    "AWS",
+    "Snowflake",
+    "Data Automation"
+  ],
+  authors: [{ name: "Hogan" }],
+  creator: "Hogan",
+  publisher: "Hogan",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://your-portfolio-url.com',
+    siteName: 'Hogan - Data Engineering & ML Portfolio',
+    title: 'Hogan | Data Engineering & ML Engineer',
+    description: 'Portfolio website showcasing my work as a Data Engineering and Machine Learning Engineer, specializing in data pipelines, ML models, and analytics solutions.',
+    images: [
+      {
+        url: '/profile-placeholder.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Hogan - Data Engineering & ML Portfolio',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Hogan | Data Engineering & ML Engineer',
+    description: 'Portfolio website showcasing my work as a Data Engineering and Machine Learning Engineer, specializing in data pipelines, ML models, and analytics solutions.',
+    images: ['/profile-placeholder.jpg'],
+    creator: '@yourtwitterhandle',
+  },
+  alternates: {
+    canonical: 'https://your-portfolio-url.com',
+  },
+  verification: {
+    google: 'DAVZzr8odYxXMRWlypC3tx_KQrwW7qbNflmNFbucSbo',
+  },
 };
 
 export default function RootLayout({
