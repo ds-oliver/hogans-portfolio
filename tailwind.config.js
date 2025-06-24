@@ -9,23 +9,23 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Updated sophisticated dark color palette with blue undertones
+        // Updated sophisticated dark color palette with lighter greys
         charcoal: { 
-          DEFAULT: '#1a1a1c', // Dark charcoal with blue undertone - main background
-          100: '#2f2f33', // Lighter charcoal with blue undertone for surfaces
-          200: '#242428', // Secondary background
-          300: '#1e1e22', // Tertiary background 
-          400: '#1a1a1c', // Default dark background
-          500: '#161618', // Deeper dark
-          600: '#121214', // Very deep dark
-          700: '#0e0e10', // Almost black with blue undertone
+          DEFAULT: '#333333', // Main background
+          100: '#3d3d3d', // Lighter grey for surfaces
+          200: '#383838', // Secondary background
+          300: '#363636', // Tertiary background 
+          400: '#333333', // Default background
+          500: '#2e2e2e', // Deeper dark
+          600: '#292929', // Very deep dark
+          700: '#242424', // Almost black
           800: '#e8eaed', // Light grey text (not pure white)
           900: '#c4c7ca'  // Medium grey secondary text
         },
         // Sophisticated accent colors for strategic color bursts
-        accent_teal: {
-          DEFAULT: '#008B8B', // Dark Cyan - modern, tech-forward
-          hover: '#20B2AA' // Light Sea Green - hover state
+        accent_purple: {
+          DEFAULT: '#8A2BE2', // Bright Purple (Blue Violet)
+          hover: '#9B30FF' // Lighter purple for hover state
         },
         accent_gold: {
           DEFAULT: '#B8860B', // Dark Goldenrod - luxury, sophistication
@@ -34,10 +34,6 @@ module.exports = {
         accent_rose: {
           DEFAULT: '#BC8F8F', // Rosy Brown - warm, elegant
           hover: '#D2B0B0' // Lighter rosy brown - hover state
-        },
-        accent_purple: {
-          DEFAULT: '#6A5ACD', // Slate Blue - creative, distinctive
-          hover: '#7B68EE' // Medium Slate Blue - hover state
         },
         persian_green: { 
           DEFAULT: '#2a9d8f', 
@@ -103,12 +99,11 @@ module.exports = {
     'border-charcoal', 'border-charcoal-100', 'border-charcoal-200', 'border-charcoal-300', 'border-charcoal-400', 'border-charcoal-500', 'border-charcoal-600', 'border-charcoal-700', 'border-charcoal-800', 'border-charcoal-900',
     
     // Accent colors
-    'bg-accent_teal', 'bg-accent_teal-hover', 'text-accent_teal', 'text-accent_teal-hover', 'border-accent_teal', 'border-accent_teal-hover',
+    'bg-accent_purple', 'bg-accent_purple-hover', 'text-accent_purple', 'text-accent_purple-hover', 'border-accent_purple', 'border-accent_purple-hover',
     'bg-accent_gold', 'bg-accent_gold-hover', 'text-accent_gold', 'text-accent_gold-hover', 'border-accent_gold', 'border-accent_gold-hover',
     'bg-accent_rose', 'bg-accent_rose-hover', 'text-accent_rose', 'text-accent_rose-hover', 'border-accent_rose', 'border-accent_rose-hover',
-    'bg-accent_purple', 'bg-accent_purple-hover', 'text-accent_purple', 'text-accent_purple-hover', 'border-accent_purple', 'border-accent_purple-hover',
-    'hover:bg-accent_teal', 'hover:bg-accent_gold', 'hover:bg-accent_rose', 'hover:bg-accent_purple',
-    'hover:text-accent_teal', 'hover:text-accent_gold', 'hover:text-accent_rose', 'hover:text-accent_purple',
+    'hover:bg-accent_gold', 'hover:bg-accent_rose',
+    'hover:text-accent_gold', 'hover:text-accent_rose',
     
     // Persian Green colors
     'bg-persian_green', 'bg-persian_green-100', 'bg-persian_green-200', 'bg-persian_green-300', 'bg-persian_green-400', 'bg-persian_green-500', 'bg-persian_green-600', 'bg-persian_green-700', 'bg-persian_green-800', 'bg-persian_green-900',
