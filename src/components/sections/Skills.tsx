@@ -158,13 +158,13 @@ export default function Skills() {
             ))}
         </motion.div>
 
-        <div className="mt-12 text-center">
+        <div className="flex justify-center items-center space-x-6 text-xs" style={{ color: 'var(--foreground-secondary)' }}>
           <span className="flex items-center">
-            <div className="w-2 h-2 rounded-full mr-2" style={{ backgroundColor: '#8A2BE2' }}></div>
+            <div className="w-2 h-2 rounded-full mr-2" style={{ backgroundColor: '#62db5d' }}></div>
             Production Ready
           </span>
           <span className="flex items-center">
-            <div className="w-2 h-2 rounded-full mr-2" style={{ backgroundColor: 'var(--accent-gold)' }}></div>
+            <div className="w-2 h-2 rounded-full mr-2" style={{ backgroundColor: '#ffbd6d' }}></div>
             Actively Learning
           </span>
         </div>
