@@ -177,11 +177,11 @@ const SkillGrid = () => (
           </p>
           <div className="flex justify-center items-center space-x-6 text-xs" style={{ color: 'var(--foreground-secondary)' }}>
             <span className="flex items-center">
-              <div className="w-2 h-2 rounded-full mr-2" style={{ backgroundColor: 'var(--accent-teal)' }}></div>
+              <div className="w-2 h-2 rounded-full mr-2" style={{ backgroundColor: 'var(--accent-green)' }}></div>
               Production Ready
             </span>
             <span className="flex items-center">
-              <div className="w-2 h-2 rounded-full mr-2" style={{ backgroundColor: 'var(--accent-gold)' }}></div>
+              <div className="w-2 h-2 rounded-full mr-2" style={{ backgroundColor: 'var(--accent-orange)' }}></div>
               Actively Learning
             </span>
           </div>
