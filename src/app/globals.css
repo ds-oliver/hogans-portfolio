@@ -37,6 +37,8 @@
   --accent-gold-hover: #DAA520; /* Goldenrod - hover state */
   --accent-rose: #BC8F8F; /* Rosy Brown - warm, elegant */
   --accent-rose-hover: #D2B0B0; /* Lighter rosy brown - hover state */
+  --accent-green: #00cc66; /* Vibrant green for skill bars */
+  --accent-green-hover: #62db5d; /* Lighter green for hover effects */
   
   /* Enhanced ripple effect gradients using new palette */
   --accent: 138, 43, 226; /* Bright purple RGB */

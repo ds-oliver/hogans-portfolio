@@ -181,7 +181,7 @@ const SkillGrid = () => (
               Production Ready
             </span>
             <span className="flex items-center">
-              <div className="w-2 h-2 rounded-full mr-2" style={{ backgroundColor: 'var(--accent-orange)' }}></div>
+              <div className="w-2 h-2 rounded-full mr-2" style={{ backgroundColor: '#ffbd6d' }}></div>
               Actively Learning
             </span>
           </div>
