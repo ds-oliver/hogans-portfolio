@@ -10,37 +10,30 @@ interface Props {
 }
 
 const SkillBar: React.FC<Props> = ({ level, filledColor }) => {
-  const [hasAnimated, setHasAnimated] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
+  const [isInView, setIsInView] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && !hasAnimated) {
-            setHasAnimated(true);
-            // Trigger ripple effect on all active squares
-            const squares = entry.target.querySelectorAll(`.${styles.skillSquare}.${styles.active}`);
-            squares.forEach((square, index) => {
-              setTimeout(() => {
-                square.classList.add(styles.rippleOnView);
-                setTimeout(() => {
-                  square.classList.remove(styles.rippleOnView);
-                }, 2200); // Match the slower CSS transition duration
-              }, index * 150); // Increased stagger delay for more dramatic effect
-            });
-          }
-        });
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+          observer.disconnect();
+        }
       },
-      { threshold: 0.5 }
+      {
+        threshold: 0.5,
+      }
     );
 
     if (containerRef.current) {
       observer.observe(containerRef.current);
     }
 
-    return () => observer.disconnect();
-  }, [hasAnimated]);
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
 
   return (
     <div ref={containerRef} className="flex gap-1.25" style={{ width: '300px' }}>
@@ -48,21 +41,15 @@ const SkillBar: React.FC<Props> = ({ level, filledColor }) => {
         const isActive = i < level;
         
         // Build CSS classes for the ripple effect
-        const baseClasses = `h-[26px] w-[26px] rounded-sm ring-1 ring-gray-700 ${styles.skillSquare}`;
+        const baseClasses = `h-[26px] w-[26px] rounded-sm ${styles.skillSquare}`;
         const colorClasses = isActive 
-          ? `${baseClasses} ${styles[filledColor]} ${styles.active}`
-          : `${baseClasses}`;
-        
-        // Use fallback inline styles for base colors
-        const customStyle = isActive 
-          ? {} // Remove hardcoded colors, use CSS module classes instead
-          : { backgroundColor: 'var(--background-secondary)' }; // unfilled - charcoal background
+          ? `${baseClasses} ${styles[filledColor]} ${isInView ? styles.rippleOnView : ''}`
+          : `${baseClasses} ${styles[filledColor]} ${styles.inactive}`;
         
         return (
           <motion.div
             key={i}
             className={colorClasses}
-            style={customStyle}
             initial={{ scale: 0, rotate: 0 }}
             animate={{ 
               scale: 1, 

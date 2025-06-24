@@ -3,10 +3,10 @@
   background-image: none;
   background-size: 600%; /* Controls the size of the gradient area */
   background-position: 120%; /* Initial position - hides the gradient */
-  transition: background-position 2s cubic-bezier(0.22, 1, 0.36, 1); /* Smooth animation for background-position changes */
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
   cursor: pointer;
-  /* Make sure other base styles like h-9, w-9, rounded-sm, etc. are also applied */
   overflow: hidden; /* Important: clips the large background-size to the element */
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
 }
 
 .active {
@@ -15,36 +15,52 @@
 
 .work {
   /* Marker class for work skills */
-  background-color: #62db5d !important;
+  background-color: #00cc66 !important;
+  box-shadow: 0 0 10px rgba(0, 204, 102, 0.3);
+}
+
+.work.inactive {
+  background-color: rgba(0, 204, 102, 0.15) !important;
+  box-shadow: none;
 }
 
 .learning {
   /* Marker class for learning skills */
   background-color: #ffbd6d !important;
+  box-shadow: 0 0 10px rgba(255, 189, 109, 0.3);
+}
+
+.learning.inactive {
+  background-color: rgba(255, 189, 109, 0.15) !important;
+  box-shadow: none;
 }
 
 /* Hover ripple effect */
 .skillSquare.work:is(:hover, :focus-within) {
   background-position: -20%; /* Target position - reveals and animates the gradient */
-  background-image: linear-gradient(45deg, #62db5d, #62db5d); /* Apply the specific gradient */
-  transition: background-position 1.4s cubic-bezier(0.22, 1, 0.36, 1); /* Faster transition on hover/focus */
+  background-image: linear-gradient(45deg, #00cc66, #62db5d); /* Soft green glow */
+  box-shadow: 0 0 15px rgba(0, 204, 102, 0.4);
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .skillSquare.learning:is(:hover, :focus-within) {
   background-position: -20%;
-  background-image: linear-gradient(45deg, #ffbd6d, #ffbd6d);
-  transition: background-position 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+  background-image: linear-gradient(45deg, #ffbd6d, #ff9966); /* Warm orange glow */
+  box-shadow: 0 0 15px rgba(255, 189, 109, 0.4);
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 /* View-triggered ripple effect - even slower and more pronounced */
 .skillSquare.rippleOnView.work {
   background-position: -20%;
-  background-image: linear-gradient(45deg, #62db5d, #62db5d);
-  transition: background-position 2.2s cubic-bezier(0.22, 1, 0.36, 1); /* Very slow for initial view */
+  background-image: linear-gradient(45deg, #00cc66, #62db5d);
+  box-shadow: 0 0 20px rgba(0, 204, 102, 0.5);
+  transition: all 2.2s cubic-bezier(0.22, 1, 0.36, 1); /* Very slow for initial view */
 }
 
 .skillSquare.rippleOnView.learning {
   background-position: -20%;
-  background-image: linear-gradient(45deg, #ffbd6d, #ffbd6d);
-  transition: background-position 2.2s cubic-bezier(0.22, 1, 0.36, 1);
+  background-image: linear-gradient(45deg, #ffbd6d, #ff9966);
+  box-shadow: 0 0 20px rgba(255, 189, 109, 0.5);
+  transition: all 2.2s cubic-bezier(0.22, 1, 0.36, 1);
 } 
