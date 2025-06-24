@@ -55,9 +55,7 @@ const SkillBar: React.FC<Props> = ({ level, filledColor }) => {
         
         // Use fallback inline styles for base colors
         const customStyle = isActive 
-          ? filledColor === 'work' 
-            ? { backgroundColor: '#62db5d' } // Persian green for work skills
-            : { backgroundColor: '#f4a261' } // Sandy brown for learning skills
+          ? {} // Remove hardcoded colors, use CSS module classes instead
           : { backgroundColor: 'var(--background-secondary)' }; // unfilled - charcoal background
         
         return (

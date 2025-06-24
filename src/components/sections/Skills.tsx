@@ -54,7 +54,7 @@ const skillCategories = [
 
 // Single gradient for all skill bars - now using sophisticated accent colors
 const getSkillGradient = () => {
-  return 'bg-gradient-to-r from-[var(--accent-teal)] to-[var(--accent-gold)]'; // sophisticated teal to gold gradient
+  return 'bg-gradient-to-r from-[#8A2BE2] to-[var(--accent-gold)]'; // sophisticated purple to gold gradient
 };
 
 export default function Skills() {
@@ -157,6 +157,17 @@ export default function Skills() {
               </motion.div>
             ))}
         </motion.div>
+
+        <div className="mt-12 text-center">
+          <span className="flex items-center">
+            <div className="w-2 h-2 rounded-full mr-2" style={{ backgroundColor: '#8A2BE2' }}></div>
+            Production Ready
+          </span>
+          <span className="flex items-center">
+            <div className="w-2 h-2 rounded-full mr-2" style={{ backgroundColor: 'var(--accent-gold)' }}></div>
+            Actively Learning
+          </span>
+        </div>
       </div>
     </section>
   );

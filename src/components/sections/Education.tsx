@@ -250,10 +250,10 @@ export default function Education() {
 
         <div className="mt-8 p-6 bg-neutral-700 rounded-lg shadow-sm">
           <div className="flex items-center justify-center gap-4">
-            <AcademicCapIcon className="h-8 w-8 bg-gradient-to-r from-[#c91a7b] to-[#00cc66] bg-clip-text text-transparent" />
+            <AcademicCapIcon className="h-8 w-8 bg-gradient-to-r from-[#8A2BE2] to-[var(--accent-gold)] bg-clip-text text-transparent" />
             <div className="text-center">
               <p className="text-sm text-neutral-200">Overall GPA</p>
-              <p className="text-3xl font-bold bg-gradient-to-r from-[#c91a7b] to-[#00cc66] bg-clip-text text-transparent">{educationInfo.gpa.toFixed(2)}</p>
+              <p className="text-3xl font-bold bg-gradient-to-r from-[#8A2BE2] to-[var(--accent-gold)] bg-clip-text text-transparent">{educationInfo.gpa.toFixed(2)}</p>
               <p className="text-sm text-neutral-200">
                 {educationInfo.totalCredits} Total Credits
               </p>

@@ -33,7 +33,7 @@ export default function SkillRadarChart() {
       <ResponsiveContainer width="100%" height="100%">
         <RadarChart data={skillData}>
           <PolarGrid 
-            stroke="#374151" 
+            stroke="var(--foreground-secondary)" 
             strokeOpacity={0.3}
             className="dark:stroke-gray-600"
           />
@@ -41,7 +41,7 @@ export default function SkillRadarChart() {
             dataKey="skill" 
             tick={{ 
               fontSize: 12, 
-              fill: '#6B7280',
+              fill: 'var(--foreground-secondary)',
               fontWeight: 500
             }}
             className="text-gray-600 dark:text-gray-300"
@@ -51,7 +51,7 @@ export default function SkillRadarChart() {
             domain={[0, 100]} 
             tick={{ 
               fontSize: 10, 
-              fill: '#9CA3AF' 
+              fill: 'var(--foreground-muted)' 
             }}
             tickCount={6}
           />
@@ -64,15 +64,15 @@ export default function SkillRadarChart() {
             strokeWidth={3}
             dot={{ 
               r: 6, 
-              fill: '#00cc66',
-              stroke: '#c91a7b',
+              fill: '#8A2BE2',
+              stroke: 'var(--foreground)',
               strokeWidth: 2
             }}
           />
           <defs>
             <linearGradient id="skillGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#c91a7b" />
-              <stop offset="100%" stopColor="#00cc66" />
+              <stop offset="0%" stopColor="#8A2BE2" />
+              <stop offset="100%" stopColor="var(--accent-gold)" />
             </linearGradient>
           </defs>
         </RadarChart>
