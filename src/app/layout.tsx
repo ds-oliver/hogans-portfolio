@@ -3,6 +3,7 @@ import { Poppins, Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ui/ThemeProvider";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -51,7 +52,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://your-portfolio-url.com',
+    url: 'https://hoganmarhoefer.com',
     siteName: 'Hogan - Data Engineering & ML Portfolio',
     title: 'Hogan | Data Engineering & ML Engineer',
     description: 'Portfolio website showcasing my work as a Data Engineering and Machine Learning Engineer, specializing in data pipelines, ML models, and analytics solutions.',
@@ -72,7 +73,7 @@ export const metadata: Metadata = {
     creator: '@yourtwitterhandle',
   },
   alternates: {
-    canonical: 'https://your-portfolio-url.com',
+    canonical: 'https://hoganmarhoefer.com',
   },
   verification: {
     google: 'DAVZzr8odYxXMRWlypC3tx_KQrwW7qbNflmNFbucSbo',
@@ -102,6 +103,7 @@ export default function RootLayout({
           {children}
         </ThemeProvider>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
