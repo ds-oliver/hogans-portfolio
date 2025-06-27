@@ -3,4 +3,4 @@ User-agent: *
 Allow: /
 
 # Sitemap location
-Sitemap: https://your-portfolio-url.com/sitemap.xml 
+Sitemap: https://hoganmarhoefer.com/sitemap.xml 
