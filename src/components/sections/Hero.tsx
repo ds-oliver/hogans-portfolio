@@ -15,7 +15,7 @@ export default function Hero() {
       </h1>
 
       <p className="mt-8 mx-auto max-w-xl text-lg text-saffron-800 text-left">
-        I build data-driven products, automate pipelines, and tell stories with football analytics.
+        I build data-driven products, automate pipelines, and help organizations level-up their DataOps.
         Recently I&apos;ve been helping non-profits level-up their reporting stacks and
         guiding utilities through data-compliance transformations.
       </p>
