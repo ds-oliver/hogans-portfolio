@@ -157,17 +157,6 @@ export default function Skills() {
               </motion.div>
             ))}
         </motion.div>
-
-        <div className="flex justify-center items-center space-x-6 text-xs" style={{ color: 'var(--foreground-secondary)' }}>
-          <span className="flex items-center">
-            <div className="w-2 h-2 rounded-full mr-2" style={{ backgroundColor: '#62db5d' }}></div>
-            Production Ready
-          </span>
-          <span className="flex items-center">
-            <div className="w-2 h-2 rounded-full mr-2" style={{ backgroundColor: '#ffbd6d' }}></div>
-            Actively Learning
-          </span>
-        </div>
       </div>
     </section>
   );

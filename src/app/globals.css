@@ -180,10 +180,9 @@ code {
 .nav-gradient-border {
   background-image: linear-gradient(var(--background-secondary), var(--background-secondary)), 
                     linear-gradient(45deg, 
-                      rgba(200, 199, 202, 0.4), 
-                      rgba(42, 157, 143, 0.3), 
-                      rgba(233, 196, 106, 0.3), 
-                      rgba(200, 199, 202, 0.4));
+                      var(--accent-purple), 
+                      var(--accent-gold), 
+                      var(--accent-purple));
   background-origin: border-box;
   background-clip: padding-box, border-box;
   border: 2px solid transparent;
