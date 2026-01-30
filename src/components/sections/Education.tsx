@@ -11,21 +11,24 @@ interface Course {
   title: string;
   credits: number;
   category: string;
+  grade: string;
+  term: string;
 }
 
 const courses: Course[] = [
-  { subject: "BTA", number: "511", title: "Business with SQL", credits: 4.0, category: "Data Science" },
-  { subject: "BTA", number: "521", title: "Data Visualization", credits: 2.0, category: "Data Science" },
-  { subject: "BTA", number: "523", title: "Special Topics: ML for Managers", credits: 2.0, category: "Data Science" },
-  { subject: "ETM", number: "527", title: "Data Mining for Business", credits: 4.0, category: "Data Science" },
-  { subject: "ETM", number: "538", title: "Data Warehousing", credits: 4.0, category: "Data Science" },
-  { subject: "BTA", number: "516", title: "Multiple Regression Business Applications", credits: 3.0, category: "Data Science" },
-  { subject: "MGMT", number: "518", title: "Digital Transformation: Business", credits: 4.0, category: "Digital Transformation" },
-  { subject: "MGMT", number: "519", title: "Digital Transformation: Security", credits: 4.0, category: "Digital Transformation" },
-  { subject: "MGMT", number: "520", title: "Organizational Change in Digital Transformation", credits: 4.0, category: "Digital Transformation" },
-  { subject: "MGMT", number: "511", title: "Foundations of Strategy", credits: 2.0, category: "Business Strategy" },
-  { subject: "RE", number: "521", title: "Real Estate Finance I", credits: 4.0, category: "Business Strategy" },
-  { subject: "ETM", number: "540", title: "Operations Research", credits: 4.0, category: "Business Strategy" },
+  { subject: "BTA", number: "516", title: "Multiple Regression Business Applications", credits: 3.0, category: "Data Science", grade: "A", term: "Fall 2025" },
+  { subject: "ETM", number: "540", title: "Operations Research", credits: 4.0, category: "Business Strategy", grade: "A", term: "Fall 2025" },
+  { subject: "MGMT", number: "520", title: "Organizational Change in Digital Transformation", credits: 4.0, category: "Digital Transformation", grade: "A", term: "Spring 2025" },
+  { subject: "MGMT", number: "519", title: "Digital Transformation: Security", credits: 4.0, category: "Digital Transformation", grade: "A", term: "Winter 2025" },
+  { subject: "MGMT", number: "511", title: "Foundations of Strategy", credits: 2.0, category: "Business Strategy", grade: "A-", term: "Fall 2024" },
+  { subject: "MGMT", number: "518", title: "Digital Transformation: Business", credits: 4.0, category: "Digital Transformation", grade: "A", term: "Fall 2024" },
+  { subject: "BTA", number: "522", title: "Special Topics: Tech for Biz", credits: 2.0, category: "Digital Transformation", grade: "A", term: "Fall 2024" },
+  { subject: "BTA", number: "521", title: "Data Visualization", credits: 2.0, category: "Data Science", grade: "A", term: "Spring 2024" },
+  { subject: "BTA", number: "523", title: "Special Topics: ML for Managers", credits: 2.0, category: "Data Science", grade: "A", term: "Winter 2024" },
+  { subject: "ETM", number: "527", title: "Data Mining for Business", credits: 4.0, category: "Data Science", grade: "A-", term: "Winter 2024" },
+  { subject: "ETM", number: "538", title: "DSS Data Warehousing", credits: 4.0, category: "Data Science", grade: "A", term: "Winter 2024" },
+  { subject: "RE", number: "521", title: "Real Estate Finance I", credits: 4.0, category: "Business Strategy", grade: "A", term: "Fall 2023" },
+  { subject: "BTA", number: "511", title: "Business with SQL", credits: 4.0, category: "Data Science", grade: "A", term: "Fall 2023" },
 ];
 
 const educationInfo = {
@@ -36,7 +39,7 @@ const educationInfo = {
   totalCredits: 32,
 };
 
-type SortField = 'subject' | 'number' | 'title' | 'credits' | 'category';
+type SortField = 'subject' | 'number' | 'title' | 'credits' | 'category' | 'grade' | 'term';
 type SortDirection = 'asc' | 'desc';
 
 export default function Education() {
@@ -208,11 +211,31 @@ export default function Education() {
                 <th
                   scope="col"
                   className="px-6 py-3 text-left text-xs font-medium text-neutral-200 uppercase tracking-wider cursor-pointer"
+                  onClick={() => handleSort('grade')}
+                >
+                  <div className="flex items-center gap-1">
+                    Grade
+                    <SortIcon field="grade" />
+                  </div>
+                </th>
+                <th
+                  scope="col"
+                  className="px-6 py-3 text-left text-xs font-medium text-neutral-200 uppercase tracking-wider cursor-pointer"
                   onClick={() => handleSort('category')}
                 >
                   <div className="flex items-center gap-1">
                     Category
                     <SortIcon field="category" />
+                  </div>
+                </th>
+                <th
+                  scope="col"
+                  className="px-6 py-3 text-left text-xs font-medium text-neutral-200 uppercase tracking-wider cursor-pointer"
+                  onClick={() => handleSort('term')}
+                >
+                  <div className="flex items-center gap-1">
+                    Term
+                    <SortIcon field="term" />
                   </div>
                 </th>
               </tr>
@@ -240,7 +263,13 @@ export default function Education() {
                     {course.credits}
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-200">
+                    {course.grade}
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-200">
                     {course.category}
+                  </td>
+                  <td className="px-6 py-4 whitespace-nowrap text-sm text-neutral-200">
+                    {course.term}
                   </td>
                 </motion.tr>
               ))}
