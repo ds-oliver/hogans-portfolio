@@ -32,7 +32,7 @@ export default function About() {
             className="space-y-6"
           >
             <p className="text-lg text-saffron-800">
-              I&apos;m a passionate Data Engineering and Machine Learning Engineer with expertise in building
+              I&apos;m a passionate Data Engineer and Machine Learning Engineer with expertise in building
               scalable data solutions and implementing machine learning models that drive business value.
             </p>
             <p className="text-lg text-saffron-800">
