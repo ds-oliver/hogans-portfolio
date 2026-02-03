@@ -112,7 +112,7 @@ export default function Skills() {
                 className="rounded-lg p-6 shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer group border-2"
                 style={{
                   backgroundColor: 'var(--background-secondary)',
-                  borderColor: 'var(--accent-teal)'
+                  borderColor: 'var(--foreground-secondary)'
                 }}
                 whileHover={{ y: -5 }}
                 transition={{ type: "spring", stiffness: 300 }}
