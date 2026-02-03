@@ -28,7 +28,7 @@ export default function SkillRadarChart() {
       className="w-full h-96 bg-charcoal-400 rounded-xl shadow-lg p-6 border border-charcoal-600"
     >
       <h3 className="text-xl font-bold text-center mb-4" style={{ color: 'var(--foreground)' }}>
-        Technical Expertise Overview
+        Data Engineering & Backend Expertise
       </h3>
       <ResponsiveContainer width="100%" height="100%">
         <RadarChart data={skillData}>

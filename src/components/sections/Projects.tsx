@@ -14,16 +14,16 @@ const projects = [
   },
   {
     title: "Fantrax API Wrapper",
-    description: "Unofficial Python bindings for the Fantrax API, focused on making it easy to query leagues, rosters, and scoring data.",
-    technologies: ["Python", "API", "Requests"],
+    description: "Backend side-project: unofficial Python client for the Fantrax API. Clean interface for querying leagues, rosters, and scoring—built for reuse and maintainability.",
+    technologies: ["Python", "API", "Backend"],
     image: "/projects/fantrax-api.jpg",
     demoLink: "https://example.com/demo",
     codeLink: "https://github.com/ds-oliver/FantraxAPI",
   },
   {
-    title: "Hogan's Portfolio",
-    description: "Personal portfolio built with Next.js, React, Tailwind CSS, and Framer Motion, deployed on Vercel.",
-    technologies: ["Next.js", "React", "Tailwind CSS", "Framer Motion"],
+    title: "This Portfolio",
+    description: "Personal site built with Next.js, React, Tailwind, and Framer Motion—showcasing data engineering and backend side-projects, deployed on Vercel.",
+    technologies: ["Next.js", "React", "Tailwind", "Vercel"],
     image: "/projects/portfolio.jpg",
     demoLink: "https://example.com/demo",
     codeLink: "https://github.com/ds-oliver/hogans-portfolio",
@@ -45,7 +45,7 @@ export default function Projects() {
             Featured Projects
           </h2>
           <p className="mt-4 text-lg text-charcoal-800">
-            A showcase of my recent work and contributions
+            Data engineering work and backend side-projects—pipelines, APIs, and tools
           </p>
         </motion.div>
 

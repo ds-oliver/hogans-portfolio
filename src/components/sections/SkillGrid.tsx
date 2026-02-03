@@ -41,8 +41,8 @@ const SkillGrid = () => (
           Technical Skills
         </h2>
         <p className="text-lg max-w-3xl mx-auto leading-relaxed" style={{ color: 'var(--foreground-muted)' }}>
-          A comprehensive overview of my technical expertise, from technologies I use professionally 
-          to emerging skills I&apos;m actively developing to stay at the forefront of innovation.
+          Core data-engineering stack I use daily, plus backend and infra tools I&apos;m building with
+          in side-projects and ongoing learning.
         </p>
       </motion.div>
 

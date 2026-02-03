@@ -19,7 +19,7 @@ export default function About() {
             About Me
           </h2>
           <p className="mt-4 text-lg text-saffron-800">
-            Get to know more about my journey and expertise
+            Data engineering first; backend and side-projects on the side
           </p>
         </motion.div>
 
@@ -32,18 +32,19 @@ export default function About() {
             className="space-y-6"
           >
             <p className="text-lg text-saffron-800">
-              I&apos;m a passionate Data Engineer and Machine Learning Engineer with expertise in building
-              scalable data solutions and implementing machine learning models that drive business value.
+              I&apos;m a Data Engineer with a strong background in the modern data stack: pipelines,
+              warehouses, ETL/ELT, and data quality. I design and build systems that make data reliable,
+              discoverable, and actionable for the teams that depend on it.
             </p>
             <p className="text-lg text-saffron-800">
-              My journey in data engineering has equipped me with deep knowledge of modern data stack
-              technologies, including Snowflake, Databricks, and various ETL tools. I specialize in
-              designing and implementing robust data pipelines that ensure data quality and reliability.
+              My day-to-day centers on Snowflake, Databricks, dbt, Airflow, and SQL—building and
+              maintaining robust data pipelines and helping organizations level up their DataOps and
+              reporting.
             </p>
             <p className="text-lg text-saffron-800">
-              In the realm of machine learning, I focus on developing and deploying models that solve
-              real-world business problems, from predictive analytics to natural language processing
-              applications.
+              Outside of data engineering I stay sharp with backend software engineering: APIs, services,
+              and automation. Many of my side-projects are Python-based tools and libraries that solve
+              real problems and keep me close to the code.
             </p>
             <div className="pt-6 flex flex-col sm:flex-row gap-4">
               <Button
@@ -97,12 +98,12 @@ export default function About() {
               transition={{ type: "spring", stiffness: 300 }}
             >
               <div className="p-6 rounded-md transition-all duration-300">
-                <h3 className="text-lg font-semibold mb-2 text-charcoal-800 transition-all duration-300">Machine Learning</h3>
+                <h3 className="text-lg font-semibold mb-2 text-charcoal-800 transition-all duration-300">Backend & Side Projects</h3>
                 <ul className="space-y-2 text-charcoal-900">
-                  <li>• Model Development</li>
-                  <li>• Feature Engineering</li>
-                  <li>• MLOps & Deployment</li>
-                  <li>• Model Monitoring</li>
+                  <li>• APIs & Services</li>
+                  <li>• Python Libraries & Tools</li>
+                  <li>• Automation & Scripting</li>
+                  <li>• Clean, Maintainable Code</li>
                 </ul>
               </div>
             </motion.div>

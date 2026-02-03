@@ -15,9 +15,9 @@ export default function Hero() {
       </h1>
 
       <p className="mt-8 mx-auto max-w-xl text-lg text-saffron-800 text-left">
-        I build data-driven products, automate pipelines, and help organizations level-up their DataOps.
-        Recently I&apos;ve been helping non-profits level-up their reporting stacks and
-        guiding utilities through data-compliance transformations.
+        I&apos;m a data engineer who builds pipelines, warehouses, and data products that teams can rely on.
+        Off the clock I build backend tools and APIs—automation, services, and side-projects that scratch
+        the software-engineering itch and keep the craft sharp.
       </p>
     </section>
   );

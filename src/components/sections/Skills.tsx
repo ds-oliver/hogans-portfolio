@@ -74,7 +74,7 @@ export default function Skills() {
             Technical Skills
           </h2>
           <p className="mt-4 text-lg text-charcoal-800">
-            A comprehensive overview of my technical expertise
+            Data engineering and modern data stack first; backend and tooling close behind
           </p>
         </motion.div>
 
