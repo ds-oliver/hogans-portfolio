@@ -35,6 +35,8 @@
   --accent-purple-hover: #9B30FF; /* Lighter purple for hover */
   --accent-gold: #B8860B; /* Dark Goldenrod - luxury, sophistication */
   --accent-gold-hover: #DAA520; /* Goldenrod - hover state */
+  --accent-teal: #14b8a6; /* Teal - charts, engagement metrics */
+  --accent-teal-hover: #5eead4; /* Lighter teal - hover state */
   --accent-rose: #BC8F8F; /* Rosy Brown - warm, elegant */
   --accent-rose-hover: #D2B0B0; /* Lighter rosy brown - hover state */
   --accent-green: #00cc66; /* Vibrant green for skill bars */
