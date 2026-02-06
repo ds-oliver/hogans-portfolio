@@ -25,13 +25,13 @@
 }
 
 .learning {
-  /* Marker class for learning skills */
-  background-color: #ffbd6d !important;
-  box-shadow: 0 0 10px rgba(255, 189, 109, 0.3);
+  /* Marker class for learning skills - uses accent-gold (amber) */
+  background-color: var(--accent-gold) !important;
+  box-shadow: 0 0 10px rgba(180, 83, 9, 0.3);
 }
 
 .learning.inactive {
-  background-color: rgba(255, 189, 109, 0.15) !important;
+  background-color: rgba(180, 83, 9, 0.15) !important;
   box-shadow: none;
 }
 
@@ -45,8 +45,8 @@
 
 .skillSquare.learning:hover {
   background-position: -20%;
-  background-image: linear-gradient(45deg, #ffbd6d, #ff9966); /* Warm orange glow */
-  box-shadow: 0 0 15px rgba(255, 189, 109, 0.4);
+  background-image: linear-gradient(45deg, var(--accent-gold), var(--accent-gold-hover));
+  box-shadow: 0 0 15px rgba(180, 83, 9, 0.4);
   transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
@@ -60,7 +60,7 @@
 
 .skillSquare.rippleOnView.learning {
   background-position: -20%;
-  background-image: linear-gradient(45deg, #ffbd6d, #ff9966);
-  box-shadow: 0 0 20px rgba(255, 189, 109, 0.5);
+  background-image: linear-gradient(45deg, var(--accent-gold), var(--accent-gold-hover));
+  box-shadow: 0 0 20px rgba(180, 83, 9, 0.5);
   transition: all 2.2s cubic-bezier(0.22, 1, 0.36, 1);
 } 

@@ -9,12 +9,15 @@ export default function Hero() {
         Hi, I&apos;m{' '}
         <span 
           className={`text-gradient-fuschia-watermelon ${styles.name}`}
-          style={{ color: 'var(--accent-gold)' }}
+          style={{ color: 'var(--secondary-accent)' }}
         >
         </span>
       </h1>
 
-      <p className="mt-8 mx-auto max-w-xl text-lg text-saffron-800 text-left">
+      <p
+        className="mt-8 mx-auto max-w-xl text-lg text-left"
+        style={{ color: "var(--foreground-secondary)" }}
+      >
         I&apos;m a data engineer who builds pipelines, warehouses, and data products that teams can rely on.
         Off the clock I build backend tools and APIs—automation, services, and side-projects that scratch
         the software-engineering itch and keep the craft sharp.

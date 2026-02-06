@@ -3,22 +3,13 @@
 import { RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, ResponsiveContainer } from 'recharts';
 import { motion } from 'framer-motion';
 
-interface SkillData {
+export interface SkillData {
   skill: string;
   level: number;
   fullMark: number;
 }
 
-const skillData: SkillData[] = [
-  { skill: 'Data Engineering', level: 90, fullMark: 100 },
-  { skill: 'Machine Learning', level: 85, fullMark: 100 },
-  { skill: 'Cloud & DevOps', level: 80, fullMark: 100 },
-  { skill: 'Python', level: 90, fullMark: 100 },
-  { skill: 'SQL', level: 95, fullMark: 100 },
-  { skill: 'Analytics', level: 85, fullMark: 100 },
-];
-
-export default function SkillRadarChart() {
+export default function SkillRadarChart({ data }: { data: SkillData[] }) {
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.8 }}
@@ -28,10 +19,10 @@ export default function SkillRadarChart() {
       className="w-full h-96 bg-charcoal-400 rounded-xl shadow-lg p-6 border border-charcoal-600"
     >
       <h3 className="text-xl font-bold text-center mb-4" style={{ color: 'var(--foreground)' }}>
-        Data Engineering & Backend Expertise
+        Skill Domain Overview
       </h3>
       <ResponsiveContainer width="100%" height="100%">
-        <RadarChart data={skillData}>
+        <RadarChart data={data}>
           <PolarGrid 
             stroke="var(--foreground-secondary)" 
             strokeOpacity={0.3}
@@ -64,15 +55,15 @@ export default function SkillRadarChart() {
             strokeWidth={3}
             dot={{ 
               r: 6, 
-              fill: '#8A2BE2',
+              fill: 'var(--accent-teal)',
               stroke: 'var(--foreground)',
               strokeWidth: 2
             }}
           />
           <defs>
             <linearGradient id="skillGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#8A2BE2" />
-              <stop offset="100%" stopColor="var(--accent-gold)" />
+              <stop offset="0%" stopColor="var(--accent-teal)" />
+              <stop offset="100%" stopColor="var(--accent-purple)" />
             </linearGradient>
           </defs>
         </RadarChart>

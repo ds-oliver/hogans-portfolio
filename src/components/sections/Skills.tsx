@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import SkillRadarChart from '@/components/ui/SkillRadarChart';
 import Button from '@/components/ui/Button';
 
 const skillCategories = [
@@ -77,11 +76,6 @@ export default function Skills() {
             Data engineering and modern data stack first; backend and tooling close behind
           </p>
         </motion.div>
-
-        {/* Radar Chart Section */}
-        <div className="mb-16">
-          <SkillRadarChart />
-        </div>
 
         <div className="flex flex-wrap justify-center gap-4 mb-12">
           {skillCategories.map((category, index) => (
