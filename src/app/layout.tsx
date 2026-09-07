@@ -1,20 +1,13 @@
 import type { Metadata } from "next";
-import { Poppins, Inter } from "next/font/google";
+import { Sora } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/components/ui/ThemeProvider";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
-const poppins = Poppins({
+const sora = Sora({
   subsets: ["latin"],
-  weight: ["400", "500", "700", "800"],
-  variable: "--font-poppins",
-  display: "swap",
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
+  weight: ["400", "600"],
+  variable: "--font-sora",
   display: "swap",
 });
 
@@ -92,10 +85,8 @@ export default function RootLayout({
         <meta name="color-scheme" content="light dark" />
         <meta name="google-site-verification" content="DAVZzr8odYxXMRWlypC3tx_KQrwW7qbNflmNFbucSbo" />
       </head>
-      <body className={`${poppins.variable} ${inter.variable} antialiased`}>
-        <ThemeProvider>
-          {children}
-        </ThemeProvider>
+      <body className={`${sora.variable} antialiased`}>
+        {children}
         <Analytics />
         <SpeedInsights />
       </body>
