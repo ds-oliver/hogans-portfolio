@@ -15,12 +15,11 @@ const navigation = [
 ];
 
 function MarlenMark() {
+  // Canonical mark_small_dark.svg from brand/, the simplified sibling for
+  // use at 32px and below on the dark tile. Not redrawn or re-proportioned.
   return (
-    <svg width="28" height="18" viewBox="0 0 32 20" aria-hidden="true">
-      <rect x="2" y="2" width="28" height="4" className="fill-layer-1" />
-      <rect x="6" y="8" width="20" height="4" className="fill-layer-2" />
-      <rect x="10" y="14" width="12" height="4" className="fill-layer-3" />
-    </svg>
+    // eslint-disable-next-line @next/next/no-img-element
+    <img src="/brand/mark_small_dark.svg" alt="" width="28" height="28" aria-hidden="true" />
   );
 }
 
