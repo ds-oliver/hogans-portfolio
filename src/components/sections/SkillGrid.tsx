@@ -22,10 +22,7 @@ const capabilityDomains: CapabilityDomain[] = [
     name: "Platforms",
     items: [
       { label: "Databricks", tier: "production" },
-      {
-        label: "SQL Server and T-SQL, including schema definition and complex query authoring in SSMS",
-        tier: "production",
-      },
+      { label: "SQL Server and T-SQL (SSMS)", tier: "production" },
       { label: "Oracle", tier: "production" },
       { label: "Power BI", tier: "production" },
       { label: "Synapse", tier: "working" },
@@ -92,9 +89,9 @@ function CapabilityPanel({ domain }: { domain: CapabilityDomain }) {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: index * 0.06 }}
-                className="flex items-center gap-2 text-ink"
+                className="relative pl-5 text-ink"
               >
-                <span className="h-1.5 w-1.5 rounded-full bg-layer-2 flex-shrink-0" />
+                <span className="absolute left-0 top-[0.45em] h-2 w-2 bg-layer-2" />
                 {item.label}
               </motion.li>
             ))}
@@ -104,23 +101,24 @@ function CapabilityPanel({ domain }: { domain: CapabilityDomain }) {
           <h4 className="text-xs uppercase tracking-wider text-ink-dim mb-3">
             Working knowledge
           </h4>
-          <ul className="space-y-2">
-            {working.length === 0 && (
-              <li className="text-sm text-ink-dim">None in this domain.</li>
-            )}
-            {working.map((item, index) => (
-              <motion.li
-                key={item.label}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: index * 0.06 }}
-                className="flex items-center gap-2 text-ink-muted"
-              >
-                <span className="h-1.5 w-1.5 rounded-full border border-layer-2 flex-shrink-0" />
-                {item.label}
-              </motion.li>
-            ))}
-          </ul>
+          {working.length === 0 ? (
+            <p className="text-sm text-ink-dim">None in this domain.</p>
+          ) : (
+            <ul className="space-y-2">
+              {working.map((item, index) => (
+                <motion.li
+                  key={item.label}
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3, delay: index * 0.06 }}
+                  className="relative pl-5 text-ink-muted"
+                >
+                  <span className="absolute left-0 top-[0.45em] h-2 w-2 border border-layer-2" />
+                  {item.label}
+                </motion.li>
+              ))}
+            </ul>
+          )}
         </div>
       </div>
       {domain.note && (
