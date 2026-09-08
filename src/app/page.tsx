@@ -1,6 +1,7 @@
 import Navigation from '@/components/layout/Navigation';
 import Hero from '@/components/sections/Hero';
 import SkillGrid from '@/components/sections/SkillGrid';
+import Footer from '@/components/layout/Footer';
 import ScrollToTop from '@/components/ui/ScrollToTop';
 
 export default function Home() {
@@ -11,6 +12,7 @@ export default function Home() {
         <Hero />
         <SkillGrid />
       </main>
+      <Footer />
       <ScrollToTop />
     </>
   );

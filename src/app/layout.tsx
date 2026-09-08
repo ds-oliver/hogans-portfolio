@@ -12,25 +12,24 @@ const sora = Sora({
 });
 
 export const metadata: Metadata = {
-  title: "Hogan | Data Engineering & ML Engineer",
-  description: "Portfolio website showcasing my work as a Data Engineering and Machine Learning Engineer, specializing in data pipelines, ML models, and analytics solutions.",
+  metadataBase: new URL("https://marlensolutions.com"),
+  title: "Marlen Solutions | Data Engineering and Solutions Architecting",
+  description:
+    "Marlen Solutions LLC builds production data pipelines, data models, and validation systems for public agencies and enterprise teams. Based in Portland, Oregon.",
   keywords: [
     "Data Engineering",
-    "Machine Learning",
-    "ML Engineer",
-    "Data Science",
-    "Portfolio",
-    "Data Pipeline",
-    "Analytics",
-    "Python",
+    "Solutions Architecture",
+    "Data Pipelines",
+    "Data Modeling",
+    "Data Validation",
     "SQL",
-    "AWS",
-    "Snowflake",
-    "Data Automation"
+    "Python",
+    "Portland Oregon",
+    "Public Sector",
   ],
-  authors: [{ name: "Hogan" }],
-  creator: "Hogan",
-  publisher: "Hogan",
+  authors: [{ name: "Hogan Marhoefer" }],
+  creator: "Marlen Solutions LLC",
+  publisher: "Marlen Solutions LLC",
   robots: {
     index: true,
     follow: true,
@@ -45,31 +44,20 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://hoganmarhoefer.com',
-    siteName: 'Hogan - Data Engineering & ML Portfolio',
-    title: 'Hogan | Data Engineering & ML Engineer',
-    description: 'Portfolio website showcasing my work as a Data Engineering and Machine Learning Engineer, specializing in data pipelines, ML models, and analytics solutions.',
-    images: [
-      {
-        url: '/profile-placeholder.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Hogan - Data Engineering & ML Portfolio',
-      },
-    ],
+    url: 'https://marlensolutions.com',
+    siteName: 'Marlen Solutions LLC',
+    title: 'Marlen Solutions | Data Engineering and Solutions Architecting',
+    description:
+      "Production data pipelines, data models, and validation systems for public agencies and enterprise teams.",
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Hogan | Data Engineering & ML Engineer',
-    description: 'Portfolio website showcasing my work as a Data Engineering and Machine Learning Engineer, specializing in data pipelines, ML models, and analytics solutions.',
-    images: ['/profile-placeholder.jpg'],
-    creator: '@yourtwitterhandle',
+    card: 'summary',
+    title: 'Marlen Solutions | Data Engineering and Solutions Architecting',
+    description:
+      "Production data pipelines, data models, and validation systems for public agencies and enterprise teams.",
   },
   alternates: {
-    canonical: 'https://hoganmarhoefer.com',
-  },
-  verification: {
-    google: 'DAVZzr8odYxXMRWlypC3tx_KQrwW7qbNflmNFbucSbo',
+    canonical: 'https://marlensolutions.com',
   },
 };
 
@@ -83,7 +71,6 @@ export default function RootLayout({
       <head>
         <meta name="darkreader-lock" />
         <meta name="color-scheme" content="light dark" />
-        <meta name="google-site-verification" content="DAVZzr8odYxXMRWlypC3tx_KQrwW7qbNflmNFbucSbo" />
       </head>
       <body className={`${sora.variable} antialiased`}>
         {children}

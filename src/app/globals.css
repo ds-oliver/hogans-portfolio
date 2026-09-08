@@ -22,44 +22,32 @@
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 
-/* Fallback for gradient text if needed */
-.text-gradient-fallback {
-  color: #7C83FF;
-}
-
 :root {
-  /* Modern dark palette - content first, classy and restrained */
-  --background: #0F1115; /* deep charcoal */
-  --background-secondary: #151A22; /* slate surface */
-  --foreground: #E6E8EE; /* off-white text */
-  --foreground-secondary: #A7ACB7; /* muted text */
-  --foreground-muted: #7A808B; /* softer captions */
-  --skill-text: #E6E8EE; /* near-white for skill labels */
-  --primary-accent: #2CB1BC; /* teal - main accent */
-  --secondary-accent: #7C83FF; /* soft violet - secondary accent */
-  --tertiary-accent: #8D93FF; /* soft violet hover */
+  /* Semantic aliases onto the Marlen ramp, so components read by role, not hex */
+  --background: var(--color-surface);
+  --background-secondary: var(--color-surface-raised);
+  --foreground: var(--color-ink);
+  --foreground-secondary: var(--color-ink-muted);
+  --foreground-muted: var(--color-ink-dim);
+  --skill-text: var(--color-ink);
 
-  /* Accent colors - used sparingly so content stays center stage */
-  --accent-purple: #7C83FF; /* soft violet */
-  --accent-purple-hover: #8D93FF;
-  --accent-gold: #7C83FF; /* repurpose to soft violet */
-  --accent-gold-hover: #8D93FF;
-  --accent-teal: #2CB1BC; /* teal - primary accent */
-  --accent-teal-hover: #3BC1CB;
-  --accent-rose: #7C83FF; /* align with violet */
-  --accent-rose-hover: #8D93FF;
-  --accent-green: #059669; /* emerald-600 - production ready (skill bars) */
-  --accent-green-hover: #10b981;
+  --primary-accent: var(--color-layer-2);
+  --secondary-accent: var(--color-layer-1);
 
-  /* Ripple / overlay accent (teal) */
-  --accent: 44, 177, 188; /* teal RGB */
+  --accent-teal: var(--color-layer-2);
+  --accent-teal-hover: var(--color-layer-1);
+  --accent-purple: var(--color-layer-2);
+  --accent-purple-hover: var(--color-layer-1);
+  --accent-gold: var(--color-layer-2);
+  --accent-gold-hover: var(--color-layer-1);
+  --accent-green: var(--color-layer-2);
+  --accent-green-hover: var(--color-layer-1);
 
-  /* Skill bar gradients */
-  --work-gradient: linear-gradient(45deg, #059669, #10b981);
-  --learning-gradient: linear-gradient(45deg, #7C83FF, #8D93FF 50%, #7C83FF 100%);
+  /* Ripple / overlay accent, RGB of --color-layer-2 for use in rgba() */
+  --accent: 110, 157, 196;
 
-  /* Page background - subtle gradient */
-  --background-gradient: linear-gradient(160deg, #0F1115 0%, #121723 50%, #0F1115 100%);
+  /* Page background - subtle gradient across the surface tones */
+  --background-gradient: linear-gradient(160deg, var(--color-surface) 0%, var(--color-surface-raised) 50%, var(--color-surface) 100%);
 }
 
 /* Font Assignments */
