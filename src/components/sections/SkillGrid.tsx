@@ -22,7 +22,10 @@ const capabilityDomains: CapabilityDomain[] = [
     name: "Platforms",
     items: [
       { label: "Databricks", tier: "production" },
-      { label: "SQL Server and T-SQL", tier: "production" },
+      {
+        label: "SQL Server and T-SQL, including schema definition and complex query authoring in SSMS",
+        tier: "production",
+      },
       { label: "Oracle", tier: "production" },
       { label: "Power BI", tier: "production" },
       { label: "Synapse", tier: "working" },

@@ -21,11 +21,11 @@ export default function Work() {
               how costs moved over time.
             </p>
             <p>
-              The workbooks were built for bid openings, not for analysis. Bidders
-              were stored as columns rather than rows, naming conventions varied
-              across files, and the same pay item appeared under many different
-              descriptions. Most of the work was reshaping and normalizing that
-              into something a reporting layer could sit on.
+              The workbooks were built for bid openings, not for analysis. How
+              bidders and pricing were laid out varied from file to file, naming
+              conventions were inconsistent, and the same pay item appeared under
+              many different descriptions. Most of the work was reshaping and
+              normalizing that into something a reporting layer could sit on.
             </p>
             <p>
               I built a layered pipeline in Databricks, raw through reporting, with
