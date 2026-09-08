@@ -15,17 +15,17 @@ export default function Work() {
           <div className="space-y-5 text-ink-muted leading-relaxed">
             <p>
               The Port had years of bid tab data and no way to use it. Historical
-              pricing lived in individual workbooks, one per bid opening, so
-              finding a comparable price meant opening files and reading them by
-              hand. There was no way to compare line items across projects or see
-              how costs moved over time.
+              pricing was fragmented across separate files with no way to compare
+              line items across projects. There was no way to compare line items
+              across projects or see how costs moved over time.
             </p>
             <p>
-              The workbooks were built for bid openings, not for analysis. How
-              bidders and pricing were laid out varied from file to file, naming
-              conventions were inconsistent, and the same pay item appeared under
-              many different descriptions. Most of the work was reshaping and
-              normalizing that into something a reporting layer could sit on.
+              The workbooks were built for bid openings, not for analysis. Bidder
+              and pricing information was structured inconsistently from source to
+              source, naming conventions were inconsistent, and the same pay item
+              appeared under many different descriptions. Most of the work was
+              reshaping and normalizing that into something a reporting layer could
+              sit on.
             </p>
             <p>
               I built a layered pipeline in Databricks, raw through reporting, with
