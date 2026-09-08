@@ -2,22 +2,22 @@ const services = [
   {
     title: "Pipeline builds",
     description:
-      "Production data pipelines, ingestion through delivery, built to run unattended.",
+      "Ingestion through delivery, built to run unattended. Scheduled, monitored, and documented well enough that someone else can maintain it.",
   },
   {
     title: "Source-to-target mapping and data modeling",
     description:
-      "Documented field-level lineage and dimensional models that survive handoff.",
+      "Field-level mapping documents and dimensional models. The spec is a deliverable, not a byproduct of the build.",
   },
   {
     title: "Validation and reconciliation",
     description:
-      "Row and value level checks that prove the target matches the source, not just that the job succeeded.",
+      "Row counts, value-level comparisons, exception reporting. A job that finishes is not the same as a job that loaded the right data.",
   },
   {
     title: "Requirements translation",
     description:
-      "Working directly with business owners to turn what they need into something an engineer can build against.",
+      "Sitting with the people who own the process, then writing something an engineer can build from. Most of what goes wrong on a data project goes wrong here, not in the code.",
   },
 ];
 

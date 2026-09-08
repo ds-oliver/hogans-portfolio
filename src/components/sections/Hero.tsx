@@ -20,8 +20,8 @@ export default function Hero() {
       </p>
 
       <p className="mt-6 mx-auto max-w-xl text-lg text-ink-muted">
-        I build production data pipelines and data models for public agencies and
-        enterprise teams, then check the results against the source until they match.
+        I build data pipelines that run in production, map the source systems they
+        pull from, and write the validation that proves the numbers landed right.
       </p>
 
       <div className="mt-10">

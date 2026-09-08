@@ -126,8 +126,8 @@ export default function SkillGrid() {
             Capabilities
           </h2>
           <p className="text-lg max-w-2xl mx-auto leading-relaxed text-ink-muted">
-            Four domains, split between where the daily work happens and where the
-            working knowledge stands ready for the next engagement.
+            Production use means I have built and supported it on a real system.
+            Working knowledge means I have built with it and would scope accordingly.
           </p>
         </div>
 
