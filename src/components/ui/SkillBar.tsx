@@ -5,11 +5,11 @@ import { motion } from 'framer-motion';
 import styles from './SkillBar.module.css';
 
 interface Props {
-  level: number;          // 0–10
-  filledColor: 'work' | 'learning';
+  /** Segments filled, 0-10. Represents lifecycle coverage, not a proficiency score. */
+  level: number;
 }
 
-const SkillBar: React.FC<Props> = ({ level, filledColor }) => {
+const SkillBar: React.FC<Props> = ({ level }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isInView, setIsInView] = useState(false);
 
@@ -39,35 +39,37 @@ const SkillBar: React.FC<Props> = ({ level, filledColor }) => {
     <div ref={containerRef} className="flex gap-1.25" style={{ width: '300px' }}>
       {Array.from({ length: 10 }).map((_, i) => {
         const isActive = i < level;
-        
-        // Build CSS classes for the ripple effect
-        const baseClasses = `h-[26px] w-[26px] rounded-sm ${styles.skillSquare}`;
-        const colorClasses = isActive 
-          ? `${baseClasses} ${styles[filledColor]} ${isInView ? styles.rippleOnView : ''}`
-          : `${baseClasses} ${styles[filledColor]} ${styles.inactive}`;
-        
+        const classes = [
+          'h-[26px]',
+          'w-[26px]',
+          'rounded-sm',
+          styles.segment,
+          isActive ? styles.filled : styles.empty,
+          isActive && isInView ? styles.filledInView : '',
+        ].filter(Boolean).join(' ');
+
         return (
           <motion.div
             key={i}
-            className={colorClasses}
+            className={classes}
             initial={{ scale: 0, rotate: 0 }}
-            animate={{ 
-              scale: 1, 
-              rotate: [0, -10, 10, -5, 5, 0] // jiggle effect
+            animate={{
+              scale: 1,
+              rotate: [0, -10, 10, -5, 5, 0],
             }}
             transition={{
               scale: {
                 duration: 0.3,
-                delay: i * 0.05, // staggered animation
+                delay: i * 0.05,
                 ease: "easeOut"
               },
               rotate: {
                 duration: 0.6,
-                delay: i * 0.05 + 0.2, // jiggle after scale
+                delay: i * 0.05 + 0.2,
                 ease: "easeInOut"
               }
             }}
-            tabIndex={0} // Make focusable for keyboard accessibility
+            tabIndex={0}
           />
         );
       })}
@@ -75,4 +77,4 @@ const SkillBar: React.FC<Props> = ({ level, filledColor }) => {
   );
 };
 
-export default SkillBar; 
+export default SkillBar;

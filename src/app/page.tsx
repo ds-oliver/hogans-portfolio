@@ -4,6 +4,7 @@ import Services from '@/components/sections/Services';
 import SkillGrid from '@/components/sections/SkillGrid';
 import Work from '@/components/sections/Work';
 import Engagement from '@/components/sections/Engagement';
+import Dossier from '@/components/sections/Dossier';
 import Footer from '@/components/layout/Footer';
 import ScrollToTop from '@/components/ui/ScrollToTop';
 
@@ -17,6 +18,7 @@ export default function Home() {
         <SkillGrid />
         <Work />
         <Engagement />
+        <Dossier />
       </main>
       <Footer />
       <ScrollToTop />
