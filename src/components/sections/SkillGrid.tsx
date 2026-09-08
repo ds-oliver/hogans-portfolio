@@ -14,14 +14,18 @@ interface CapabilityItem {
 interface CapabilityDomain {
   name: string;
   items: CapabilityItem[];
+  note?: string;
 }
 
 const capabilityDomains: CapabilityDomain[] = [
   {
-    name: "Data platforms",
+    name: "Platforms",
     items: [
+      { label: "Databricks", tier: "production" },
+      { label: "SQL Server and T-SQL", tier: "production" },
       { label: "Oracle", tier: "production" },
-      { label: "SQL Server", tier: "production" },
+      { label: "Power BI", tier: "production" },
+      { label: "Synapse", tier: "working" },
       { label: "Snowflake", tier: "working" },
       { label: "Postgres", tier: "working" },
     ],
@@ -31,17 +35,25 @@ const capabilityDomains: CapabilityDomain[] = [
     items: [
       { label: "Python", tier: "production" },
       { label: "SQL", tier: "production" },
+      { label: "Boomi", tier: "working" },
+      { label: "Azure DevOps", tier: "working" },
       { label: "Airflow", tier: "working" },
       { label: "Incremental and full-load patterns", tier: "working" },
     ],
   },
   {
-    name: "Modeling and mapping",
+    name: "Formats and mapping",
     items: [
+      { label: "X12 EDI 834", tier: "production" },
+      { label: "X12 EDI 820", tier: "production" },
+      { label: "Fixed-length flat files", tier: "production" },
+      { label: "Proprietary flat-file formats", tier: "production" },
+      { label: "Field-level source-to-target mapping", tier: "production" },
+      { label: "Data contracts", tier: "production" },
       { label: "Dimensional modeling", tier: "production" },
-      { label: "Source-to-target specs", tier: "production" },
       { label: "Slowly changing dimensions", tier: "production" },
     ],
+    note: "Mapping approach adapts per format rather than applying one template. Contracts cover types, transformations, null handling, and business rules, written to test as pass or fail against real data rather than left as prose.",
   },
   {
     name: "Validation",
@@ -50,12 +62,13 @@ const capabilityDomains: CapabilityDomain[] = [
       { label: "Row and aggregate checks", tier: "production" },
       { label: "Exception reporting", tier: "production" },
     ],
+    note: "Validation SQL ships with the spec. Requirements get reconciled against existing documentation and the data itself before going to subject matter experts, so SME time confirms or corrects inference rather than starting discovery from scratch. Disagreements get settled by pulling the records in dispute.",
   },
 ];
 
-function CapabilityPanel({ items }: { items: CapabilityItem[] }) {
-  const production = items.filter((item) => item.tier === "production");
-  const working = items.filter((item) => item.tier === "working");
+function CapabilityPanel({ domain }: { domain: CapabilityDomain }) {
+  const production = domain.items.filter((item) => item.tier === "production");
+  const working = domain.items.filter((item) => item.tier === "working");
 
   return (
     <motion.div
@@ -107,6 +120,11 @@ function CapabilityPanel({ items }: { items: CapabilityItem[] }) {
           </ul>
         </div>
       </div>
+      {domain.note && (
+        <p className="mt-6 pt-6 border-t border-surface-line text-ink-muted leading-relaxed">
+          {domain.note}
+        </p>
+      )}
     </motion.div>
   );
 }
@@ -180,7 +198,7 @@ export default function SkillGrid() {
               exit={{ opacity: 0, x: -40 }}
               transition={{ duration: 0.3 }}
             >
-              <CapabilityPanel items={capabilityDomains[currentIndex].items} />
+              <CapabilityPanel domain={capabilityDomains[currentIndex]} />
             </motion.div>
           </AnimatePresence>
         </div>

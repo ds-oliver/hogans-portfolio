@@ -16,10 +16,10 @@ export default function Home() {
       <main>
         <Hero />
         <Services />
-        <SkillGrid />
         <Work />
-        <Engagement />
+        <SkillGrid />
         <Dossier />
+        <Engagement />
         <Contact />
       </main>
       <Footer />

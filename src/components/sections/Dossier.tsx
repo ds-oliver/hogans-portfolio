@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import SkillBar from "@/components/ui/SkillBar";
 
 const fields: { label: string; value: string }[] = [
   { label: "SUBJECT", value: "Hogan Marhoefer" },
@@ -17,12 +16,6 @@ const fields: { label: string; value: string }[] = [
   { label: "CREDENTIALS", value: "M.S. Applied Data Science for Business" },
   { label: "COVERAGE", value: "GL $1M/$2M, E&O $1M, occurrence form" },
   { label: "STATUS", value: "Accepting engagements" },
-];
-
-const coverage = [
-  "Discovery and requirements",
-  "Build and mapping",
-  "Validation and reconciliation",
 ];
 
 function CornerBracket({ className }: { className: string }) {
@@ -93,20 +86,6 @@ export default function Dossier() {
                 </motion.div>
               ))}
             </dl>
-
-            <div className="mt-10 space-y-5">
-              {coverage.map((label) => (
-                <div key={label}>
-                  <div
-                    className="text-layer-2 uppercase mb-2 font-mono"
-                    style={{ fontSize: "11px", letterSpacing: "0.08em" }}
-                  >
-                    {label}
-                  </div>
-                  <SkillBar level={10} />
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </div>
