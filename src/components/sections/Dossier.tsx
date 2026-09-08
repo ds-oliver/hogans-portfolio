@@ -46,13 +46,22 @@ export default function Dossier() {
       <div className="max-w-5xl mx-auto rounded-lg bg-tile p-8 sm:p-10">
         <div className="grid grid-cols-1 md:grid-cols-[minmax(0,240px)_1fr] gap-10">
           <div className="relative mx-auto w-full max-w-[240px]">
-            <div className="relative aspect-[4/5] overflow-hidden border border-layer-2">
+            <div
+              className="relative border border-layer-2"
+              style={{ aspectRatio: "4 / 5", overflow: "hidden" }}
+            >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/hogan.jpg"
                 alt="Hogan Marhoefer"
-                className="h-full w-full object-cover"
-                style={{ objectPosition: "62% 22%", filter: "grayscale(30%)" }}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  objectPosition: "62% 22%",
+                  display: "block",
+                  filter: "grayscale(30%)",
+                }}
               />
             </div>
             <CornerBracket className="absolute -top-1 -left-1" />
