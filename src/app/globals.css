@@ -1,81 +1,58 @@
 @import "tailwindcss";
 
-@font-face {
-  font-family: 'F1 Black';
-  src: url('/fonts/F1Black.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
+@theme {
+  /* Marlen ramp */
+  --color-layer-1: #DCE7F0;
+  --color-layer-1-stroke: #C3D4E3;
+  --color-layer-2: #6E9DC4;
+  --color-layer-3: #1C4468;
+  --color-tile: #1A2B3C;
 
-/* Ensure F1 font is available globally */
-.font-f1 {
-  font-family: 'F1 Black', 'Arial Black', sans-serif;
-  font-weight: 900;
-}
+  /* Surfaces, derived from the tile */
+  --color-surface: #121D28;
+  --color-surface-raised: #1A2B3C;
+  --color-surface-line: #24384B;
 
-/* Fallback for gradient text if needed */
-.text-gradient-fallback {
-  color: #7C83FF;
+  /* Text */
+  --color-ink: #DCE7F0;
+  --color-ink-muted: #9FB4C7;
+  --color-ink-dim: #6E8298;
+
+  --font-sans: var(--font-sora);
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 }
 
 :root {
-  /* Modern dark palette - content first, classy and restrained */
-  --background: #0F1115; /* deep charcoal */
-  --background-secondary: #151A22; /* slate surface */
-  --foreground: #E6E8EE; /* off-white text */
-  --foreground-secondary: #A7ACB7; /* muted text */
-  --foreground-muted: #7A808B; /* softer captions */
-  --skill-text: #E6E8EE; /* near-white for skill labels */
-  --primary-accent: #2CB1BC; /* teal - main accent */
-  --secondary-accent: #7C83FF; /* soft violet - secondary accent */
-  --tertiary-accent: #8D93FF; /* soft violet hover */
+  /* Semantic aliases onto the Marlen ramp, so components read by role, not hex */
+  --background: var(--color-surface);
+  --background-secondary: var(--color-surface-raised);
+  --foreground: var(--color-ink);
+  --foreground-secondary: var(--color-ink-muted);
+  --foreground-muted: var(--color-ink-dim);
+  --skill-text: var(--color-ink);
 
-  /* Accent colors - used sparingly so content stays center stage */
-  --accent-purple: #7C83FF; /* soft violet */
-  --accent-purple-hover: #8D93FF;
-  --accent-gold: #7C83FF; /* repurpose to soft violet */
-  --accent-gold-hover: #8D93FF;
-  --accent-teal: #2CB1BC; /* teal - primary accent */
-  --accent-teal-hover: #3BC1CB;
-  --accent-rose: #7C83FF; /* align with violet */
-  --accent-rose-hover: #8D93FF;
-  --accent-green: #059669; /* emerald-600 - production ready (skill bars) */
-  --accent-green-hover: #10b981;
+  --primary-accent: var(--color-layer-2);
+  --secondary-accent: var(--color-layer-1);
 
-  /* Ripple / overlay accent (teal) */
-  --accent: 44, 177, 188; /* teal RGB */
+  --accent-teal: var(--color-layer-2);
+  --accent-teal-hover: var(--color-layer-1);
+  --accent-purple: var(--color-layer-2);
+  --accent-purple-hover: var(--color-layer-1);
+  --accent-gold: var(--color-layer-2);
+  --accent-gold-hover: var(--color-layer-1);
+  --accent-green: var(--color-layer-2);
+  --accent-green-hover: var(--color-layer-1);
 
-  /* Skill bar gradients */
-  --work-gradient: linear-gradient(45deg, #059669, #10b981);
-  --learning-gradient: linear-gradient(45deg, #7C83FF, #8D93FF 50%, #7C83FF 100%);
+  /* Ripple / overlay accent, RGB of --color-layer-2 for use in rgba() */
+  --accent: 110, 157, 196;
 
-  /* Page background - subtle gradient */
-  --background-gradient: linear-gradient(160deg, #0F1115 0%, #121723 50%, #0F1115 100%);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0F1115;
-    --background-secondary: #151A22;
-    --foreground: #E6E8EE;
-    --foreground-secondary: #A7ACB7;
-    --foreground-muted: #7A808B;
-  }
-}
-
-/* Use data-theme for initial dark mode to prevent FOUC */
-[data-theme="dark"] {
-  --background: #0F1115;
-  --background-secondary: #151A22;
-  --foreground: #E6E8EE;
-  --foreground-secondary: #A7ACB7;
-  --foreground-muted: #7A808B;
+  /* Page background - subtle gradient across the surface tones */
+  --background-gradient: linear-gradient(160deg, var(--color-surface) 0%, var(--color-surface-raised) 50%, var(--color-surface) 100%);
 }
 
 /* Font Assignments */
 html {
-  font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: var(--font-sora), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 body {
@@ -83,30 +60,28 @@ body {
   background-color: var(--background); /* Fallback if gradient unavailable */
   background-image: var(--background-gradient);
   background-attachment: fixed; /* Keeps gradient fixed during scroll */
-  font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: var(--font-sora), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   min-height: 100vh; /* Ensures gradient covers full viewport */
 }
 
-/* Poppins ONLY for headings */
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-poppins), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: var(--font-sora), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-/* Inter for all other elements */
 a {
-  font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: var(--font-sora), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 .nav-links a {
-  font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: var(--font-sora), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 .intro {
-  font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: var(--font-sora), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 div, span, p {
-  font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: var(--font-sora), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 /* Monospace for code */

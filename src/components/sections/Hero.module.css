@@ -9,46 +9,18 @@
 }
 
 @keyframes typing-sequence {
-  /* Type @ds-oliver (0% to 30%) */
-  0%      { content: ""; }
-  3%      { content: "@"; }
-  6%      { content: "@d"; }
-  9%      { content: "@ds"; }
-  12%     { content: "@ds-"; }
-  15%     { content: "@ds-o"; }
-  18%     { content: "@ds-ol"; }
-  21%     { content: "@ds-oli"; }
-  24%     { content: "@ds-oliv"; }
-  27%     { content: "@ds-olive"; }
-  30%     { content: "@ds-oliver"; }
-  
-  /* Pause (30% to 45%) */
-  45%     { content: "@ds-oliver"; }
-  
-  /* Backspace @ds-oliver (45% to 65%) */
-  47%     { content: "@ds-olive"; }
-  49%     { content: "@ds-oliv"; }
-  51%     { content: "@ds-oli"; }
-  53%     { content: "@ds-ol"; }
-  55%     { content: "@ds-o"; }
-  57%     { content: "@ds-"; }
-  59%     { content: "@ds"; }
-  61%     { content: "@d"; }
-  63%     { content: "@"; }
-  65%     { content: ""; }
-  
-  /* Pause (65% to 70%) */
-  70%     { content: ""; }
-  
-  /* Type Hogan (70% to 85%) */
-  73%     { content: "H"; }
-  76%     { content: "Ho"; }
-  79%     { content: "Hog"; }
-  82%     { content: "Hoga"; }
-  85%     { content: "Hogan"; }
-  
-  /* Stay at Hogan (85% to 100%) */
-  100%    { content: "Hogan"; }
+  /* Type "Solutions" once, then hold */
+  0%   { content: ""; }
+  8%   { content: "S"; }
+  16%  { content: "So"; }
+  24%  { content: "Sol"; }
+  32%  { content: "Soli"; }
+  40%  { content: "Solu"; }
+  48%  { content: "Solut"; }
+  56%  { content: "Soluti"; }
+  64%  { content: "Solutio"; }
+  72%  { content: "Solutions"; }
+  100% { content: "Solutions"; }
 }
 
 /* Name typing animation class */
@@ -62,7 +34,7 @@
 /* ::before is used to type out the sequence */
 .name::before {
   content: "";
-  animation: typing-sequence 8s steps(1, end) forwards;
+  animation: typing-sequence 2.4s steps(1, end) forwards;
   font-family: inherit;
 }
 
@@ -76,4 +48,4 @@
   background-color: var(--caret);
   animation: blink 1s step-start infinite;
   vertical-align: baseline;
-} 
+}

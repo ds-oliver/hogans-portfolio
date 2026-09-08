@@ -31,7 +31,14 @@ These are not style preferences. They are correctness constraints for a site tha
 
 ## Brand
 
-Single source of truth is `docs/MARLEN_SITE_REBUILD.md`, section "Brand tokens." Do not invent colors, do not substitute fonts, do not add a second accent hue. The palette is four blues and a near-black. Typeface is Sora, weights 400 and 600 only.
+Single source of truth for page tokens is `docs/MARLEN_SITE_REBUILD.md`, section "Brand tokens." Do not invent colors, do not substitute fonts, do not add a second accent hue. The palette is four blues and a near-black. Typeface is Sora, weights 400 and 600 only.
+
+The canonical logo suite lives in `brand/` (SVG masters, PNG exports, `favicon.ico`, Sora TTFs, and the usage sheet). Per `brand/Marlen_Solutions_Logo_Usage_Sheet.pdf`, there are two color ramps, not one:
+
+- **The mark graphic itself, wherever it sits on a dark background** (nav, favicon, icon, OG image): `#DCE7F0` / `#7FA8C9` / `#4A7BAA`.
+- **Everything else, meaning body text accents, borders, capability dots, headings, rules, table headers, and chart accents:** `#DCE7F0` / `#6E9DC4` / `#1C4468`, the tokens above.
+
+Don't extend the mark's dark-background ramp to general UI, and don't use the UI ramp on the mark graphic.
 
 ## Facts about the business
 
