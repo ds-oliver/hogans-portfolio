@@ -16,6 +16,18 @@ Full build spec: `docs/MARLEN_SITE_REBUILD.md`. Read it before making changes.
 - Delete dead code rather than commenting it out.
 - No new dependencies without saying why. The current tree already carries `three`, `@react-three/fiber`, and `@react-three/drei` for nothing; those come out.
 
+## Merge verification, always
+
+Never report a PR as merged based on having sent the merge command. After running `gh pr merge`, verify before saying anything landed:
+
+    gh pr view <n> --json state,mergedAt,mergeCommit
+
+state must be MERGED and mergedAt must be non-null. Then confirm the commit is actually reachable from main:
+
+    git merge-base --is-ancestor <sha> origin/main && echo "on main"
+
+Only after both checks pass, report it as merged. If Cloudflare Pages is expected to deploy from this change, also confirm the deployment finished building (`gh pr checks` or the Pages dashboard build log) before saying anything is live on marlensolutions.com.
+
 ## Content rules
 
 These are not style preferences. They are correctness constraints for a site that public agency procurement staff will read.
@@ -28,6 +40,12 @@ These are not style preferences. They are correctness constraints for a site tha
 - **No em dashes in any copy.** Use commas, periods, or a restructured sentence.
 - Plain verbs in body copy. "Built," "reviewed," "found," "checked." Not "leveraged," "spearheaded," "dove into."
 - Banned words in copy: leverage (verb), robust, seamless, streamline, unlock, empower, holistic, deep dive.
+
+## Evidence and sourcing standard
+
+Capability, tier, and experience claims come from Hogan directly. When he states he has production experience with something, that settles the tier. Do not require corroboration from project audit files, transcripts, or prior session notes before accepting it or proceeding.
+
+Audit/evidence files in this repo (capability inventories, BRDs, session handoffs) exist to find redaction-safe language for something Hogan has already confirmed, not to verify whether he's telling the truth about his own work. If a claim needs public-facing evidence and none exists in the audits, say so and ask how he wants it worded, but do not block or re-flag a claim he's already made directly.
 
 ## Brand
 
