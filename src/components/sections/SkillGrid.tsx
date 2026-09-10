@@ -14,55 +14,73 @@ interface CapabilityItem {
 interface CapabilityDomain {
   name: string;
   items: CapabilityItem[];
-  note?: string;
 }
 
 const capabilityDomains: CapabilityDomain[] = [
   {
-    name: "Platforms",
+    name: "Requirements and delivery",
     items: [
-      { label: "Databricks", tier: "production" },
-      { label: "SQL Server and T-SQL (SSMS)", tier: "production" },
-      { label: "Oracle", tier: "production" },
-      { label: "Power BI", tier: "production" },
-      { label: "Synapse", tier: "working" },
-      { label: "Snowflake", tier: "working" },
-      { label: "Postgres", tier: "working" },
+      { label: "Requirements to sign-off", tier: "production" },
+      { label: "Requirements traceability", tier: "production" },
+      { label: "Gap and open-items triage", tier: "production" },
+      { label: "Technical runbook authorship", tier: "production" },
+      { label: "Structured meeting minutes", tier: "production" },
+      { label: "Backlog decomposition", tier: "production" },
+      { label: "Effort estimation", tier: "production" },
+      { label: "Vendor scope negotiation", tier: "production" },
+      { label: "Change-advisory packages", tier: "production" },
+      { label: "Security review coordination", tier: "production" },
+      { label: "Release test cycle ownership", tier: "production" },
+      { label: "Requirements tooling", tier: "working" },
+      { label: "Agile delivery practice", tier: "working" },
     ],
   },
   {
-    name: "Pipeline and orchestration",
+    name: "Validation and reconciliation",
     items: [
-      { label: "Python", tier: "production" },
-      { label: "SQL", tier: "production" },
-      { label: "Boomi", tier: "working" },
-      { label: "Azure DevOps", tier: "working" },
-      { label: "Airflow", tier: "working" },
-      { label: "Incremental and full-load patterns", tier: "working" },
+      { label: "Production validation SQL", tier: "production" },
+      { label: "Manual checks as pass/fail", tier: "production" },
+      { label: "Cross-system reconciliation", tier: "production" },
+      { label: "Incident root-cause tracing", tier: "production" },
+      { label: "Environment drift detection", tier: "production" },
+      { label: "File comparison gates", tier: "production" },
+      { label: "Assumptions tested in data", tier: "production" },
+      { label: "Layered network diagnostics", tier: "working" },
     ],
   },
   {
-    name: "Formats and mapping",
+    name: "Data formats and modeling",
     items: [
+      { label: "Source-to-target mapping", tier: "production" },
+      { label: "Fixed-width flat-file analysis", tier: "production" },
+      { label: "CSV as exchange contract", tier: "production" },
+      { label: "Spreadsheet data contracts", tier: "production" },
+      { label: "Data lineage documentation", tier: "production" },
+      { label: "Testable business rules", tier: "production" },
       { label: "X12 EDI 834", tier: "production" },
       { label: "X12 EDI 820", tier: "production" },
-      { label: "Fixed-length flat files", tier: "production" },
-      { label: "Proprietary flat-file formats", tier: "production" },
-      { label: "Field-level source-to-target mapping", tier: "production" },
-      { label: "Data contracts", tier: "production" },
-      { label: "Dimensional modeling", tier: "production" },
-      { label: "Slowly changing dimensions", tier: "production" },
+      { label: "Vendor segment layouts", tier: "working" },
+      { label: "Batch state modeling", tier: "working" },
     ],
-    note: "Mapping approach adapts per format rather than applying one template. Contracts cover types, transformations, null handling, and business rules, written to test as pass or fail against real data rather than left as prose.",
   },
   {
-    name: "Validation",
+    name: "Platforms and languages",
     items: [
-      { label: "Reconciliation queries", tier: "production" },
-      { label: "Row and aggregate checks", tier: "production" },
-      { label: "Exception reporting", tier: "production" },
+      { label: "SQL Server and T-SQL", tier: "production" },
+      { label: "Python for reconciliation", tier: "production" },
+      { label: "Legacy reverse-engineering", tier: "production" },
+      { label: "Enterprise ERP releases", tier: "production" },
+      { label: "Databricks", tier: "production" },
+      { label: "Power BI", tier: "working" },
+      { label: "Serverless cloud compute", tier: "working" },
+      { label: "Infrastructure as code", tier: "working" },
+      { label: "Managed identity and secrets", tier: "working" },
+      { label: "TypeScript and Node", tier: "working" },
+      { label: "SSIS", tier: "working" },
+      { label: "VBA", tier: "working" },
+      { label: "Managed file transfer", tier: "working" },
+      { label: "CRM as upstream source", tier: "working" },
     ],
-    note: "Validation SQL ships with the spec. Requirements get reconciled against existing documentation and the data itself before going to subject matter experts, so SME time confirms or corrects inference rather than starting discovery from scratch. Disagreements get settled by pulling the records in dispute.",
   },
 ];
 
@@ -121,11 +139,6 @@ function CapabilityPanel({ domain }: { domain: CapabilityDomain }) {
           )}
         </div>
       </div>
-      {domain.note && (
-        <p className="mt-6 pt-6 border-t border-surface-line text-ink-muted leading-relaxed">
-          {domain.note}
-        </p>
-      )}
     </motion.div>
   );
 }
@@ -145,8 +158,9 @@ export default function SkillGrid() {
             Capabilities
           </h2>
           <p className="text-lg max-w-2xl mx-auto leading-relaxed text-ink-muted">
-            Production use means I have built and supported it on a real system.
-            Working knowledge means I have built with it and would scope accordingly.
+            Production use means I have built, shipped, or operated it on a real
+            system. Working knowledge means I have used, configured, read, or
+            debugged it.
           </p>
         </div>
 
