@@ -16,6 +16,14 @@ Full build spec: `docs/MARLEN_SITE_REBUILD.md`. Read it before making changes.
 - Delete dead code rather than commenting it out.
 - No new dependencies without saying why. The current tree already carries `three`, `@react-three/fiber`, and `@react-three/drei` for nothing; those come out.
 
+## Branch hygiene
+
+Before starting new work, fetch and confirm main is current. Do not assume a PR merged because a handoff or chat said so. If the work depends on a fix landing first, confirm it is reachable from the base:
+
+    git log --oneline origin/main -- <file>
+
+If it is not there, stop and say so. Do not branch from the wrong base or rebuild something that already exists on another branch.
+
 ## Merge verification, always
 
 Never report a PR as merged based on having sent the merge command. After running `gh pr merge`, verify before saying anything landed:
@@ -27,6 +35,10 @@ state must be MERGED and mergedAt must be non-null. Then confirm the commit is a
     git merge-base --is-ancestor <sha> origin/main && echo "on main"
 
 Only after both checks pass, report it as merged. If Cloudflare Pages is expected to deploy from this change, also confirm the deployment finished building (`gh pr checks` or the Pages dashboard build log) before saying anything is live on marlensolutions.com.
+
+## Test before merge, on the PR build
+
+Test every change on its Cloudflare Pages preview before merging. Give Hogan the commit-pinned preview URL, not the branch alias. If a change depends on runtime behavior a sandboxed browser can't confirm (animation timing, requestAnimationFrame transitions, anything that needs a real foregrounded tab), say so and ask Hogan for a real-device check before merge. Do not assert that it works.
 
 ## Content rules
 
