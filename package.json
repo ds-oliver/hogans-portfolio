@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node scripts/sync-github.mjs",
     "build": "next build",
+    "sync:github": "node scripts/sync-github.mjs",
     "start": "next start",
     "lint": "next lint"
   },

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Script from "next/script";
+import { GITHUB_URL, GitHubIcon, LINKEDIN_URL, LinkedInIcon } from "@/components/ui/SocialLinks";
 
 declare global {
   interface Window {
@@ -176,6 +177,26 @@ export default function Contact() {
             </a>
           </p>
           <p>Portland, Oregon</p>
+          <div className="flex justify-center gap-5 pt-4">
+            <a
+              className="inline-flex items-center gap-2 hover:text-ink"
+              href={LINKEDIN_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <LinkedInIcon />
+              LinkedIn
+            </a>
+            <a
+              className="inline-flex items-center gap-2 hover:text-ink"
+              href={GITHUB_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <GitHubIcon />
+              GitHub
+            </a>
+          </div>
         </div>
       </div>
     </section>
