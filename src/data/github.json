@@ -1,0 +1,567 @@
+{
+  "login": "ds-oliver",
+  "profileUrl": "https://github.com/ds-oliver",
+  "fetchedAt": "2026-10-30T00:29:03.083Z",
+  "contributionsLastYear": 127,
+  "publicRepos": 10,
+  "calendarStart": "2025-10-26",
+  "weeks": [
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      2,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      5,
+      0
+    ],
+    [
+      0,
+      0,
+      8,
+      6,
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      2,
+      0,
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      4,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      20,
+      9,
+      1,
+      4,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      2,
+      3,
+      49,
+      0,
+      5,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      2,
+      0,
+      0,
+      1
+    ]
+  ],
+  "languages": [
+    {
+      "name": "Python",
+      "share": 0.6687927462947899
+    },
+    {
+      "name": "TypeScript",
+      "share": 0.3068223197852476
+    },
+    {
+      "name": "Go",
+      "share": 0.013891754835755334
+    },
+    {
+      "name": "R",
+      "share": 0.005747126436781609
+    },
+    {
+      "name": "JavaScript",
+      "share": 0.0035225078009593178
+    },
+    {
+      "name": "Other",
+      "share": 0.0012235448464662426
+    }
+  ],
+  "repos": [
+    {
+      "name": "FantraxAPI",
+      "url": "https://github.com/ds-oliver/FantraxAPI",
+      "description": "Python Wrapper for the Fantrax API",
+      "language": "Python",
+      "isFork": true,
+      "commits": 46,
+      "pushedAt": "2026-10-05T19:17:40Z"
+    },
+    {
+      "name": "Operations-Research-End-to-End-Morning-Routine-Optimizer",
+      "url": "https://github.com/ds-oliver/Operations-Research-End-to-End-Morning-Routine-Optimizer",
+      "description": "End-to-end OR pipeline for ETM540 (Operations Research) Final Project.",
+      "language": "R",
+      "isFork": false,
+      "commits": 1,
+      "pushedAt": "2026-01-14T03:20:17Z"
+    },
+    {
+      "name": "Gift-Card-Operations",
+      "url": "https://github.com/ds-oliver/Gift-Card-Operations",
+      "description": null,
+      "language": "Python",
+      "isFork": false,
+      "commits": 4,
+      "pushedAt": "2026-02-05T05:39:08Z"
+    },
+    {
+      "name": "Grant-Ready-Agentic-Retrieval-GRA-R-",
+      "url": "https://github.com/ds-oliver/Grant-Ready-Agentic-Retrieval-GRA-R-",
+      "description": null,
+      "language": "Go",
+      "isFork": false,
+      "commits": 3,
+      "pushedAt": "2026-02-04T05:40:28Z"
+    },
+    {
+      "name": "hogans-portfolio",
+      "url": "https://github.com/ds-oliver/hogans-portfolio",
+      "description": null,
+      "language": "TypeScript",
+      "isFork": false,
+      "commits": 54,
+      "pushedAt": "2026-10-30T00:24:41Z"
+    },
+    {
+      "name": "PDX-Bid-Tabs",
+      "url": "https://github.com/ds-oliver/PDX-Bid-Tabs",
+      "description": null,
+      "language": "Python",
+      "isFork": false,
+      "commits": 64,
+      "pushedAt": "2026-10-26T22:48:04Z"
+    }
+  ]
+}

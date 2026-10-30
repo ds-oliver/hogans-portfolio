@@ -5,6 +5,7 @@ import SkillGrid from '@/components/sections/SkillGrid';
 import Work from '@/components/sections/Work';
 import Engagement from '@/components/sections/Engagement';
 import Dossier from '@/components/sections/Dossier';
+import GitHub from '@/components/sections/GitHub';
 import Contact from '@/components/sections/Contact';
 import Footer from '@/components/layout/Footer';
 import ScrollToTop from '@/components/ui/ScrollToTop';
@@ -19,6 +20,7 @@ export default function Home() {
         <Work />
         <SkillGrid />
         <Dossier />
+        <GitHub />
         <Engagement />
         <Contact />
       </main>
