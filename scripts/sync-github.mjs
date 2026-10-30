@@ -16,7 +16,7 @@ const TOP_REPOS = 6;
 const TOP_LANGUAGES = 5;
 
 // Repo names to keep off the site, e.g. coursework.
-const EXCLUDE = new Set([]);
+const EXCLUDE = new Set(['data_mining_hw']);
 
 // Styling and markup, left out so the language mix reflects code.
 const MARKUP = new Set(['CSS', 'SCSS', 'HTML']);
@@ -40,6 +40,9 @@ async function gh(path, init = {}) {
 const query = `query($login: String!) {
   user(login: $login) {
     url
+    pinnedItems(first: 6, types: REPOSITORY) {
+      nodes { ... on Repository { name } }
+    }
     contributionsCollection {
       contributionCalendar {
         totalContributions
@@ -82,6 +85,11 @@ async function main() {
     )
   ).filter((r) => r.commits > 0);
 
+  // Cards follow the pins on the GitHub profile, in pin order, topped up
+  // with the most-contributed repos if fewer than TOP_REPOS are pinned.
+  const pinned = user.pinnedItems.nodes.map((n) => n.name);
+  const pinRank = (r) => (pinned.includes(r.name) ? pinned.indexOf(r.name) : Infinity);
+
   // Each repo's language mix, weighted by how many of its commits are mine,
   // so a fork's upstream code does not count as my own output.
   const weights = new Map();
@@ -114,7 +122,12 @@ async function main() {
     weeks: calendar.weeks.map((w) => w.contributionDays.map((d) => d.contributionCount)),
     languages,
     repos: repos
-      .sort((a, b) => b.commits - a.commits || b.pushedAt.localeCompare(a.pushedAt))
+      .sort(
+        (a, b) =>
+          pinRank(a) - pinRank(b) ||
+          b.commits - a.commits ||
+          b.pushedAt.localeCompare(a.pushedAt)
+      )
       .slice(0, TOP_REPOS)
       .map((r) => ({
         name: r.name,

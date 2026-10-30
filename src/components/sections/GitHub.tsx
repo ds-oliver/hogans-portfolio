@@ -170,8 +170,8 @@ export default function GitHub() {
           Open source
         </h2>
         <p className="mx-auto mb-10 max-w-xl text-center text-ink-muted">
-          Public repositories on GitHub. Client work stays in client systems and
-          does not appear here.
+          Public repositories on GitHub, with activity and languages pulled from
+          the GitHub API.
         </p>
 
         <div className="rounded-lg border border-surface-line bg-surface-raised p-6 sm:p-8">
@@ -211,7 +211,7 @@ export default function GitHub() {
 
           <div className="mt-10">
             <p className="mb-4 text-xs uppercase tracking-wider text-layer-2">
-              Most contributed
+              Pinned repositories
             </p>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {github.repos.map((repo) => (

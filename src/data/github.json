@@ -1,9 +1,9 @@
 {
   "login": "ds-oliver",
   "profileUrl": "https://github.com/ds-oliver",
-  "fetchedAt": "2026-10-30T00:21:55.183Z",
-  "contributionsLastYear": 60,
-  "publicRepos": 9,
+  "fetchedAt": "2026-10-30T00:29:03.083Z",
+  "contributionsLastYear": 127,
+  "publicRepos": 10,
   "calendarStart": "2025-10-26",
   "weeks": [
     [
@@ -144,11 +144,11 @@
     [
       0,
       0,
+      2,
       0,
       0,
       0,
-      0,
-      0
+      1
     ],
     [
       0,
@@ -197,7 +197,7 @@
     ],
     [
       0,
-      0,
+      4,
       0,
       0,
       0,
@@ -450,10 +450,10 @@
     [
       0,
       2,
+      3,
+      49,
       0,
-      0,
-      0,
-      0,
+      5,
       0
     ],
     [
@@ -476,48 +476,39 @@
     ],
     [
       0,
+      2,
       0,
       0,
-      0,
-      0
+      1
     ]
   ],
   "languages": [
     {
       "name": "Python",
-      "share": 0.49447313908152135
+      "share": 0.6687927462947899
     },
     {
       "name": "TypeScript",
-      "share": 0.4683077512511673
+      "share": 0.3068223197852476
     },
     {
       "name": "Go",
-      "share": 0.021203204749310773
+      "share": 0.013891754835755334
     },
     {
       "name": "R",
-      "share": 0.008771929824561403
+      "share": 0.005747126436781609
     },
     {
       "name": "JavaScript",
-      "share": 0.005376459275148432
+      "share": 0.0035225078009593178
     },
     {
       "name": "Other",
-      "share": 0.0018675158182905806
+      "share": 0.0012235448464662426
     }
   ],
   "repos": [
-    {
-      "name": "hogans-portfolio",
-      "url": "https://github.com/ds-oliver/hogans-portfolio",
-      "description": null,
-      "language": "TypeScript",
-      "isFork": false,
-      "commits": 54,
-      "pushedAt": "2026-10-05T17:37:00Z"
-    },
     {
       "name": "FantraxAPI",
       "url": "https://github.com/ds-oliver/FantraxAPI",
@@ -526,6 +517,15 @@
       "isFork": true,
       "commits": 46,
       "pushedAt": "2026-10-05T19:17:40Z"
+    },
+    {
+      "name": "Operations-Research-End-to-End-Morning-Routine-Optimizer",
+      "url": "https://github.com/ds-oliver/Operations-Research-End-to-End-Morning-Routine-Optimizer",
+      "description": "End-to-end OR pipeline for ETM540 (Operations Research) Final Project.",
+      "language": "R",
+      "isFork": false,
+      "commits": 1,
+      "pushedAt": "2026-01-14T03:20:17Z"
     },
     {
       "name": "Gift-Card-Operations",
@@ -537,15 +537,6 @@
       "pushedAt": "2026-02-05T05:39:08Z"
     },
     {
-      "name": "data_mining_hw",
-      "url": "https://github.com/ds-oliver/data_mining_hw",
-      "description": null,
-      "language": "Python",
-      "isFork": false,
-      "commits": 4,
-      "pushedAt": "2024-04-29T00:24:33Z"
-    },
-    {
       "name": "Grant-Ready-Agentic-Retrieval-GRA-R-",
       "url": "https://github.com/ds-oliver/Grant-Ready-Agentic-Retrieval-GRA-R-",
       "description": null,
@@ -555,13 +546,22 @@
       "pushedAt": "2026-02-04T05:40:28Z"
     },
     {
-      "name": "Operations-Research-End-to-End-Morning-Routine-Optimizer",
-      "url": "https://github.com/ds-oliver/Operations-Research-End-to-End-Morning-Routine-Optimizer",
-      "description": "End-to-end OR pipeline for ETM540 (Operations Research) Final Project.",
-      "language": "R",
+      "name": "hogans-portfolio",
+      "url": "https://github.com/ds-oliver/hogans-portfolio",
+      "description": null,
+      "language": "TypeScript",
       "isFork": false,
-      "commits": 1,
-      "pushedAt": "2026-01-14T03:20:17Z"
+      "commits": 54,
+      "pushedAt": "2026-10-30T00:24:41Z"
+    },
+    {
+      "name": "PDX-Bid-Tabs",
+      "url": "https://github.com/ds-oliver/PDX-Bid-Tabs",
+      "description": null,
+      "language": "Python",
+      "isFork": false,
+      "commits": 64,
+      "pushedAt": "2026-10-26T22:48:04Z"
     }
   ]
 }
