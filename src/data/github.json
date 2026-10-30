@@ -1,8 +1,8 @@
 {
   "login": "ds-oliver",
   "profileUrl": "https://github.com/ds-oliver",
-  "fetchedAt": "2026-10-30T00:29:03.083Z",
-  "contributionsLastYear": 127,
+  "fetchedAt": "2026-10-30T00:37:19.681Z",
+  "contributionsLastYear": 130,
   "publicRepos": 10,
   "calendarStart": "2025-10-26",
   "weeks": [
@@ -479,7 +479,7 @@
       2,
       0,
       0,
-      1
+      4
     ]
   ],
   "languages": [
@@ -489,7 +489,11 @@
     },
     {
       "name": "TypeScript",
-      "share": 0.3068223197852476
+      "share": 0.2794778237631645
+    },
+    {
+      "name": "JavaScript",
+      "share": 0.030867003823042367
     },
     {
       "name": "Go",
@@ -498,10 +502,6 @@
     {
       "name": "R",
       "share": 0.005747126436781609
-    },
-    {
-      "name": "JavaScript",
-      "share": 0.0035225078009593178
     },
     {
       "name": "Other",
@@ -552,7 +552,7 @@
       "language": "TypeScript",
       "isFork": false,
       "commits": 54,
-      "pushedAt": "2026-10-30T00:24:41Z"
+      "pushedAt": "2026-10-30T00:30:48Z"
     },
     {
       "name": "PDX-Bid-Tabs",
