@@ -51,7 +51,7 @@ export default function Dossier() {
                   width: "100%",
                   height: "100%",
                   objectFit: "cover",
-                  objectPosition: "62% 22%",
+                  objectPosition: "50% 30%",
                   display: "block",
                   filter: "grayscale(30%)",
                 }}
