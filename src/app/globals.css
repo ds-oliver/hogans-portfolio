@@ -183,3 +183,14 @@ code {
   color: var(--foreground);
   border: 2px solid var(--foreground-secondary); /* Near-white border */
 } 
+
+/* Inlined architecture diagrams: font-family is stripped from the SVGs so
+   text picks up the page's Sora, which next/font registers under a hashed name. */
+.diagram svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.diagram text {
+  font-family: var(--font-sans);
+}
