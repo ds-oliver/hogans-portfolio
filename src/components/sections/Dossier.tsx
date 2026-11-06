@@ -18,6 +18,16 @@ const fields: { label: string; value: string }[] = [
   { label: "STATUS", value: "Accepting engagements" },
 ];
 
+// Working standard, not a capability list. Capabilities carries the line
+// items; this carries how the work gets done.
+const standard: string[] = [
+  "Reverse-engineers undocumented systems from extracted code and live data.",
+  "Writes requirements as testable conditions.",
+  "Separates confirmed findings from inferred ones in every document.",
+  "Reconciles conflicting stakeholder accounts against documented system behavior.",
+  "Pushes back on a direction when the data does not support it.",
+];
+
 function CornerBracket({ className }: { className: string }) {
   return (
     <svg
@@ -86,6 +96,25 @@ export default function Dossier() {
                 </motion.div>
               ))}
             </dl>
+
+            <div className="mt-8 pt-8 border-t border-surface-line space-y-3">
+              {standard.map((line, index) => (
+                <motion.p
+                  key={line}
+                  initial={{ opacity: 0, y: 8 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 0.3,
+                    delay: (fields.length + index) * 0.06,
+                  }}
+                  className="font-mono leading-relaxed text-ink-muted"
+                  style={{ fontSize: "13px" }}
+                >
+                  {line}
+                </motion.p>
+              ))}
+            </div>
           </div>
         </div>
       </div>
