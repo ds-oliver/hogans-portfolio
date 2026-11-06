@@ -1,0 +1,163 @@
+[
+  {
+    "file": "arch-01-meter-to-billing.svg",
+    "title": "Utility Meter-to-Billing Pipeline",
+    "caption": "Field device readings land in staging, pass validation and estimation rules, and load a dimensional model that feeds billing and usage reporting.",
+    "theme": "dark",
+    "practice": "data-engineering"
+  },
+  {
+    "file": "arch-02-public-sector-warehouse.svg",
+    "title": "Public-Sector Reporting Warehouse",
+    "caption": "Departmental source systems load into shared dimensions and a governed semantic layer, so every published dashboard uses the same definitions.",
+    "theme": "dark",
+    "practice": "analytics-engineering"
+  },
+  {
+    "file": "arch-03-payroll-reconciliation.svg",
+    "title": "Insurance and Payroll Reconciliation",
+    "caption": "Records from two systems of record are matched by rule, exceptions go to a review queue, and resolved items post to a reconciled ledger.",
+    "theme": "dark",
+    "practice": "process-automation"
+  },
+  {
+    "file": "arch-04-requirements-to-validation.svg",
+    "title": "Requirements to Validation Method",
+    "caption": "Business requirements are mapped field by field, built into transformations, checked with automated validation queries, and signed off before release.",
+    "theme": "dark",
+    "practice": "data-engineering"
+  },
+  {
+    "file": "arch-05-legacy-migration.svg",
+    "title": "Legacy System Migration",
+    "caption": "Legacy data is extracted, profiled, and mapped, then run in parallel with the new platform and checked for variances before cutover.",
+    "theme": "dark",
+    "practice": "solutions-architecture"
+  },
+  {
+    "file": "arch-06-hub-and-spoke.svg",
+    "title": "Governed Data Platform Hub",
+    "caption": "Source systems load into one governed platform, and dashboards, models, and partner feeds read from it under shared catalog and access rules.",
+    "theme": "deep",
+    "practice": "solutions-architecture"
+  },
+  {
+    "file": "arch-07-layered-stack.svg",
+    "title": "Layered Data Platform Stack",
+    "caption": "Data moves up from raw storage through cleaned, modeled, and semantic layers to reports, and each layer has a named owner.",
+    "theme": "light",
+    "practice": "analytics-engineering"
+  },
+  {
+    "file": "arch-08-star-schema.svg",
+    "title": "Utility Usage Star Schema",
+    "caption": "One usage fact table joins to meter, date, account, rate plan, and premise dimensions through surrogate keys.",
+    "theme": "blueprint",
+    "practice": "analytics-engineering"
+  },
+  {
+    "file": "arch-09-validated-request.svg",
+    "title": "Validated Request Sequence",
+    "caption": "A request fails a validation rule, is corrected and resubmitted, passes, and is written to the system of record.",
+    "theme": "light",
+    "practice": "solutions-architecture"
+  },
+  {
+    "file": "arch-10-record-lifecycle.svg",
+    "title": "Record Lifecycle Loop",
+    "caption": "Each record is received and validated, failed records go to exceptions and are corrected, and clean records are reconciled and archived.",
+    "theme": "dark",
+    "practice": "process-automation"
+  },
+  {
+    "file": "arch-11-integration-layer.svg",
+    "title": "Point-to-Point vs Integration Layer",
+    "caption": "The same five systems shown wired directly to each other, then connected through one integration layer with a single contract per system.",
+    "theme": "split",
+    "practice": "solutions-architecture"
+  },
+  {
+    "file": "arch-12-current-vs-target.svg",
+    "title": "Current State and Target State",
+    "caption": "The current setup moves data by export and rekeying, and the target routes both applications through one API into a shared warehouse.",
+    "theme": "light",
+    "practice": "solutions-architecture"
+  },
+  {
+    "file": "arch-13-integration-patterns.svg",
+    "title": "Integration Pattern Map",
+    "caption": "One system of record serves consumers three ways: a synchronous API, an event queue, and a scheduled file drop.",
+    "theme": "dark",
+    "practice": "solutions-architecture"
+  },
+  {
+    "file": "arch-14-access-boundary.svg",
+    "title": "Security and Access Boundary",
+    "caption": "Requests sign in through an identity provider, roles decide what a user can see, and sensitive fields are masked before data leaves the boundary.",
+    "theme": "light",
+    "practice": "solutions-architecture"
+  },
+  {
+    "file": "arch-15-ingestion-quality-gates.svg",
+    "title": "Ingestion with Quality Gates",
+    "caption": "Files and API payloads land first, a schema check passes good loads to the warehouse, and failures go to quarantine for steward review.",
+    "theme": "dark",
+    "practice": "data-engineering"
+  },
+  {
+    "file": "arch-16-orchestrated-batch.svg",
+    "title": "Orchestrated Batch Pipeline",
+    "caption": "A nightly schedule runs jobs in dependency order, retries a failed step, and sends an alert when retries run out.",
+    "theme": "light",
+    "practice": "data-engineering"
+  },
+  {
+    "file": "arch-17-change-data-capture.svg",
+    "title": "Change Data Capture to Warehouse",
+    "caption": "A log reader streams source changes to a queue, a merge job writes a new version for each changed row, and a current view shows the latest rows.",
+    "theme": "dark",
+    "practice": "data-engineering"
+  },
+  {
+    "file": "arch-18-request-approval-bpmn.svg",
+    "title": "Request to Approval Process",
+    "caption": "A request moves from the requester through operations review and finance approval, and the system posts the result and generates a letter.",
+    "theme": "light",
+    "practice": "process-automation"
+  },
+  {
+    "file": "arch-19-exception-loop.svg",
+    "title": "Exception Handling Loop",
+    "caption": "Unmatched records go to a queue for analyst review, are corrected and resubmitted to the matcher, and matched records post and close.",
+    "theme": "dark",
+    "practice": "process-automation"
+  },
+  {
+    "file": "arch-20-document-intake.svg",
+    "title": "Document Intake Automation",
+    "caption": "Inbound documents are read by text extraction, valid fields update the system of record, and failed fields go to manual keying.",
+    "theme": "light",
+    "practice": "process-automation"
+  },
+  {
+    "file": "arch-21-layered-modeling.svg",
+    "title": "Layered Analytics Modeling",
+    "caption": "Sources feed reusable staging and intermediate models, which build mart tables, a semantic layer, and dashboards, with docs kept alongside.",
+    "theme": "dark",
+    "practice": "analytics-engineering"
+  },
+  {
+    "file": "arch-22-test-and-deploy.svg",
+    "title": "Test and Deploy Workflow",
+    "caption": "Each model change goes through review and automated tests, passing changes deploy to production, and the docs site rebuilds from the deployed models.",
+    "theme": "light",
+    "practice": "analytics-engineering"
+  },
+  {
+    "file": "arch-23-metric-governance.svg",
+    "title": "Metric Definition Governance",
+    "caption": "A business question becomes a written metric definition, the owner signs it off, and only then does it become a certified dataset for reports.",
+    "theme": "dark",
+    "practice": "analytics-engineering"
+  }
+]
