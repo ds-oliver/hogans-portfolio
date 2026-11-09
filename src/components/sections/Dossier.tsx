@@ -39,10 +39,7 @@ export default function Dossier() {
       <div className="max-w-5xl mx-auto rounded-lg bg-tile p-8 sm:p-10">
         <div className="grid grid-cols-1 md:grid-cols-[minmax(0,240px)_1fr] gap-10">
           <div className="relative mx-auto w-full max-w-[240px]">
-            <div
-              className="relative border border-layer-2"
-              style={{ aspectRatio: "4 / 5", overflow: "hidden" }}
-            >
+            <div className="relative overflow-hidden border border-layer-2 aspect-[4/5] md:aspect-auto md:h-full">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/hogan.jpg"
