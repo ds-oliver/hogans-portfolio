@@ -35,7 +35,10 @@ function CornerBracket({ className }: { className: string }) {
 
 export default function Dossier() {
   return (
-    <section id="about" className="py-24 px-6">
+    <section id="profile" className="py-24 px-6">
+      <h2 className="text-center text-3xl sm:text-4xl font-semibold text-ink mb-12">
+        Firm Profile
+      </h2>
       <div className="max-w-5xl mx-auto rounded-lg bg-tile p-8 sm:p-10">
         <div className="grid grid-cols-1 md:grid-cols-[minmax(0,240px)_1fr] gap-10">
           <div className="relative mx-auto w-full max-w-[240px]">
