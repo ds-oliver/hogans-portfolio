@@ -32,7 +32,7 @@ export default function Services() {
           {services.map((service) => (
             <div
               key={service.title}
-              className="rounded-lg border border-surface-line bg-surface-raised p-6"
+              className="group rounded-lg border border-steel-line bg-steel p-6 border-t-2 border-t-layer-3 transition duration-200 hover:-translate-y-1 hover:border-layer-2 hover:border-t-layer-2 hover:shadow-lg hover:shadow-black/30"
             >
               <h3 className="text-lg font-semibold text-ink mb-2">
                 {service.title}

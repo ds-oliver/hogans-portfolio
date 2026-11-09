@@ -1,8 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type KeyboardEvent } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 
 type Tier = "production" | "working";
 
@@ -66,83 +65,75 @@ const capabilityDomains: CapabilityDomain[] = [
   },
 ];
 
-function CapabilityPanel({ domain }: { domain: CapabilityDomain }) {
-  const production = domain.items.filter((item) => item.tier === "production");
-  const working = domain.items.filter((item) => item.tier === "working");
+type Filter = "all" | Tier;
 
+const filters: { value: Filter; label: string }[] = [
+  { value: "all", label: "All" },
+  { value: "production", label: "Production" },
+  { value: "working", label: "Working knowledge" },
+];
+
+function Chip({ item }: { item: CapabilityItem }) {
+  const isProduction = item.tier === "production";
   return (
-    <motion.div
-      initial={{ opacity: 0, x: -20 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.4 }}
-      className="w-full rounded-lg border border-surface-line bg-surface-raised p-6"
+    <motion.li
+      layout
+      initial={{ opacity: 0, scale: 0.92 }}
+      animate={{ opacity: 1, scale: 1 }}
+      exit={{ opacity: 0, scale: 0.92 }}
+      transition={{ duration: 0.2 }}
+      whileHover={{ y: -2 }}
+      title={isProduction ? "Used in production" : "Working knowledge"}
+      className={
+        isProduction
+          ? "flex items-center gap-2 rounded-md border border-layer-2/50 bg-layer-3/30 px-3 py-1.5 text-sm text-ink transition-colors hover:border-layer-1 hover:bg-layer-3/60"
+          : "flex items-center gap-2 rounded-md border border-dashed border-steel-line bg-deep/40 px-3 py-1.5 text-sm text-ink-muted transition-colors hover:border-layer-2 hover:text-ink"
+      }
     >
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-        <div>
-          <h4 className="text-xs uppercase tracking-wider text-ink-dim mb-3">
-            Used in production
-          </h4>
-          <ul className="space-y-2">
-            {production.map((item, index) => (
-              <motion.li
-                key={item.label}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: index * 0.06 }}
-                className="relative pl-5 text-ink"
-              >
-                <span className="absolute left-0 top-[0.45em] h-2 w-2 bg-layer-2" />
-                {item.label}
-              </motion.li>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <h4 className="text-xs uppercase tracking-wider text-ink-dim mb-3">
-            Working knowledge
-          </h4>
-          {working.length === 0 ? (
-            <p className="text-sm text-ink-dim">None in this domain.</p>
-          ) : (
-            <ul className="space-y-2">
-              {working.map((item, index) => (
-                <motion.li
-                  key={item.label}
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3, delay: index * 0.06 }}
-                  className="relative pl-5 text-ink-muted"
-                >
-                  <span className="absolute left-0 top-[0.45em] h-2 w-2 border border-layer-2" />
-                  {item.label}
-                </motion.li>
-              ))}
-            </ul>
-          )}
-        </div>
-      </div>
-      {domain.note && (
-        <p className="mt-6 pt-6 border-t border-surface-line text-ink-muted leading-relaxed">
-          {domain.note}
-        </p>
-      )}
-    </motion.div>
+      <span
+        aria-hidden="true"
+        className={
+          isProduction
+            ? "h-1.5 w-1.5 shrink-0 bg-layer-2"
+            : "h-1.5 w-1.5 shrink-0 border border-layer-2"
+        }
+      />
+      {item.label}
+    </motion.li>
   );
 }
 
 export default function SkillGrid() {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [index, setIndex] = useState(0);
+  const [filter, setFilter] = useState<Filter>("all");
   const total = capabilityDomains.length;
+  const domain = capabilityDomains[index];
+  const visible = domain.items.filter(
+    (item) => filter === "all" || item.tier === filter,
+  );
 
-  const goPrev = () => setCurrentIndex((i) => (i === 0 ? total - 1 : i - 1));
-  const goNext = () => setCurrentIndex((i) => (i === total - 1 ? 0 : i + 1));
+  const onTabKey = (e: KeyboardEvent<HTMLButtonElement>) => {
+    const next =
+      e.key === "ArrowDown" || e.key === "ArrowRight"
+        ? (index + 1) % total
+        : e.key === "ArrowUp" || e.key === "ArrowLeft"
+          ? (index - 1 + total) % total
+          : null;
+    if (next === null) return;
+    e.preventDefault();
+    setIndex(next);
+    document.getElementById(`stack-tab-${next}`)?.focus();
+  };
 
   return (
-    <section id="capabilities" className="py-20">
-      <div className="max-w-5xl mx-auto px-6">
+    <section
+      id="stack"
+      className="py-24 px-6 bg-deep/80 border-y border-steel-line"
+    >
+      <div className="max-w-5xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-semibold text-ink mb-4">
-            Capabilities
+            Technology Stack
           </h2>
           <p className="text-lg max-w-2xl mx-auto leading-relaxed text-ink-muted">
             Production use means I have built and supported it on a real system.
@@ -150,58 +141,107 @@ export default function SkillGrid() {
           </p>
         </div>
 
-        <div className="flex items-center justify-center gap-4 flex-wrap mb-8">
-          <button
-            type="button"
-            onClick={goPrev}
-            aria-label="Previous domain"
-            className="p-2 rounded-full border border-surface-line text-ink hover:bg-surface-raised transition-colors"
+        <div className="grid grid-cols-1 md:grid-cols-[250px_1fr] gap-6">
+          <div
+            role="tablist"
+            aria-label="Technology domains"
+            aria-orientation="vertical"
+            className="flex md:flex-col gap-2 overflow-x-auto md:overflow-visible pb-1 md:pb-0"
           >
-            <ChevronLeftIcon className="h-6 w-6" />
-          </button>
-          <span className="text-base font-semibold min-w-[220px] text-center text-ink">
-            {capabilityDomains[currentIndex].name}
-          </span>
-          <button
-            type="button"
-            onClick={goNext}
-            aria-label="Next domain"
-            className="p-2 rounded-full border border-surface-line text-ink hover:bg-surface-raised transition-colors"
-          >
-            <ChevronRightIcon className="h-6 w-6" />
-          </button>
-        </div>
-        <div
-          className="flex justify-center gap-2 mb-10"
-          role="tablist"
-          aria-label="Capability domains"
-        >
-          {capabilityDomains.map((domain, i) => (
-            <button
-              key={domain.name}
-              type="button"
-              role="tab"
-              aria-selected={i === currentIndex}
-              aria-label={`View ${domain.name}`}
-              onClick={() => setCurrentIndex(i)}
-              className="w-2.5 h-2.5 rounded-full bg-layer-2 transition-opacity"
-              style={{ opacity: i === currentIndex ? 1 : 0.35 }}
-            />
-          ))}
-        </div>
+            {capabilityDomains.map((d, i) => {
+              const active = i === index;
+              return (
+                <button
+                  key={d.name}
+                  id={`stack-tab-${i}`}
+                  type="button"
+                  role="tab"
+                  aria-selected={active}
+                  aria-controls="stack-panel"
+                  tabIndex={active ? 0 : -1}
+                  onClick={() => setIndex(i)}
+                  onKeyDown={onTabKey}
+                  className={`relative shrink-0 rounded-md border px-4 py-3 text-left transition-colors ${
+                    active
+                      ? "border-layer-2/60 text-ink"
+                      : "border-steel-line bg-steel/60 text-ink-muted hover:border-layer-2/50 hover:text-ink"
+                  }`}
+                >
+                  {active && (
+                    <motion.span
+                      layoutId="stack-active"
+                      className="absolute inset-0 rounded-md bg-layer-3/40"
+                      transition={{ type: "spring", stiffness: 400, damping: 35 }}
+                    />
+                  )}
+                  <span className="relative flex items-center justify-between gap-4">
+                    <span className="font-semibold whitespace-nowrap md:whitespace-normal">
+                      {d.name}
+                    </span>
+                    <span className="text-xs text-ink-dim">{d.items.length}</span>
+                  </span>
+                </button>
+              );
+            })}
+          </div>
 
-        <div className="overflow-hidden">
-          <AnimatePresence mode="wait" initial={false}>
-            <motion.div
-              key={currentIndex}
-              initial={{ opacity: 0, x: 40 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -40 }}
-              transition={{ duration: 0.3 }}
-            >
-              <CapabilityPanel domain={capabilityDomains[currentIndex]} />
-            </motion.div>
-          </AnimatePresence>
+          <div
+            id="stack-panel"
+            role="tabpanel"
+            aria-labelledby={`stack-tab-${index}`}
+            className="rounded-lg border border-steel-line bg-steel p-6"
+          >
+            <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
+              <h3 className="text-lg font-semibold text-ink">{domain.name}</h3>
+              <div
+                role="group"
+                aria-label="Filter by experience level"
+                className="inline-flex rounded-md border border-steel-line bg-deep/60 p-0.5"
+              >
+                {filters.map((f) => (
+                  <button
+                    key={f.value}
+                    type="button"
+                    aria-pressed={filter === f.value}
+                    onClick={() => setFilter(f.value)}
+                    className={`rounded px-3 py-1 text-xs transition-colors ${
+                      filter === f.value
+                        ? "bg-layer-3 text-ink"
+                        : "text-ink-muted hover:text-ink"
+                    }`}
+                  >
+                    {f.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <ul className="flex flex-wrap gap-2 min-h-[3rem]">
+              <AnimatePresence mode="popLayout" initial={false}>
+                {visible.map((item) => (
+                  <Chip key={`${domain.name}-${item.label}`} item={item} />
+                ))}
+              </AnimatePresence>
+            </ul>
+            {visible.length === 0 && (
+              <p className="text-sm text-ink-dim">None in this domain.</p>
+            )}
+
+            <div className="mt-5 flex gap-5 text-xs text-ink-dim">
+              <span className="flex items-center gap-2">
+                <span className="h-1.5 w-1.5 bg-layer-2" /> Used in production
+              </span>
+              <span className="flex items-center gap-2">
+                <span className="h-1.5 w-1.5 border border-layer-2" /> Working knowledge
+              </span>
+            </div>
+
+            {domain.note && (
+              <p className="mt-6 pt-6 border-t border-steel-line text-ink-muted leading-relaxed">
+                {domain.note}
+              </p>
+            )}
+          </div>
         </div>
       </div>
     </section>

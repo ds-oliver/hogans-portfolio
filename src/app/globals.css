@@ -13,6 +13,13 @@
   --color-surface-raised: #1A2B3C;
   --color-surface-line: #24384B;
 
+  /* Depth tones: a darker navy and a cool steel grey, used for section
+     bands and card fills so the page is not one flat blue. Derived working
+     values, not part of the canonical brand ramp. */
+  --color-deep: #0B141D;
+  --color-steel: #1B2530;
+  --color-steel-line: #2E3C4A;
+
   /* Text */
   --color-ink: #DCE7F0;
   --color-ink-muted: #9FB4C7;

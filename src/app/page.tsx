@@ -18,10 +18,10 @@ export default function Home() {
       <main>
         <Hero />
         <Services />
-        <Work />
-        <Architecture />
-        <SkillGrid />
         <Dossier />
+        <SkillGrid />
+        <Architecture />
+        <Work />
         <GitHub />
         <Engagement />
         <Contact />
