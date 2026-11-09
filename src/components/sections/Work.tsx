@@ -1,11 +1,11 @@
 export default function Work() {
   return (
-    <section id="work" className="py-24 px-6">
+    <section id="work" className="py-24 px-6 bg-deep/80 border-y border-steel-line">
       <div className="max-w-3xl mx-auto">
         <h2 className="text-center text-3xl sm:text-4xl font-semibold text-ink mb-10">
           Work
         </h2>
-        <div className="rounded-lg border border-surface-line bg-surface-raised p-8">
+        <div className="rounded-lg border border-steel-line bg-steel p-8">
           <p className="text-xs uppercase tracking-wider text-layer-2 mb-2">
             Port of Portland
           </p>

@@ -76,7 +76,7 @@ export default function Contact() {
 
         <form
           onSubmit={handleSubmit}
-          className="rounded-lg border border-surface-line bg-surface-raised p-8 space-y-5"
+          className="rounded-lg border border-steel-line bg-steel p-8 space-y-5"
         >
           <div>
             <label className={labelClasses} htmlFor="name">
