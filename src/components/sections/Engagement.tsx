@@ -9,8 +9,9 @@ export default function Engagement() {
           <p className="text-ink-muted leading-relaxed">
             Marlen Solutions LLC is a single-member Oregon LLC, Registry No.
             258911594. General liability at $1M per occurrence and $2M aggregate
-            on an occurrence form. Errors and omissions at $1M per claim. Written
-            to public agency requirements.
+            on an occurrence form, with cyber coverage at $100K per year as an
+            additional coverage on that policy. Errors and omissions at $1M per
+            claim. Written to public agency requirements.
           </p>
           <p className="text-ink-muted leading-relaxed">
             Invoicing adapts to your process. Purchase orders, contract line

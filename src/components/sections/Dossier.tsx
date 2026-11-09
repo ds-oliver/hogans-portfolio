@@ -14,7 +14,7 @@ const fields: { label: string; value: string }[] = [
   { label: "CORE STACK", value: "SQL, Python, dimensional modeling" },
   { label: "METHOD", value: "Requirements to mapping to validation" },
   { label: "CREDENTIALS", value: "M.S. Applied Data Science for Business" },
-  { label: "COVERAGE", value: "GL $1M/$2M, E&O $1M, occurrence form" },
+  { label: "COVERAGE", value: "GL $1M/$2M, cyber $100K/yr, E&O $1M, occurrence form" },
   { label: "STATUS", value: "Accepting engagements" },
 ];
 
